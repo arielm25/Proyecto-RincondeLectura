@@ -186,6 +186,12 @@
     <Compile Include="FNGenero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ABMUsuario.Designer.vb">
+      <DependentUpon>ABMUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FVentas.Designer.vb">
       <DependentUpon>FVentas.vb</DependentUpon>
     </Compile>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FNGenero.resx">
       <DependentUpon>FNGenero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMUsuario.resx">
+      <DependentUpon>ABMUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FVentas.resx">
       <DependentUpon>FVentas.vb</DependentUpon>

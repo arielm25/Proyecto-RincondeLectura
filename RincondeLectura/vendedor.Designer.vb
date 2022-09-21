@@ -87,7 +87,7 @@ Partial Class vendedor
         Me.PClientes.Dock = System.Windows.Forms.DockStyle.Top
         Me.PClientes.Location = New System.Drawing.Point(0, 274)
         Me.PClientes.Name = "PClientes"
-        Me.PClientes.Size = New System.Drawing.Size(142, 49)
+        Me.PClientes.Size = New System.Drawing.Size(142, 83)
         Me.PClientes.TabIndex = 13
         '
         'BLClientes
@@ -98,7 +98,7 @@ Partial Class vendedor
         Me.BLClientes.Location = New System.Drawing.Point(0, 23)
         Me.BLClientes.Name = "BLClientes"
         Me.BLClientes.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLClientes.Size = New System.Drawing.Size(142, 25)
+        Me.BLClientes.Size = New System.Drawing.Size(142, 26)
         Me.BLClientes.TabIndex = 34
         Me.BLClientes.Text = "Listas de Clientes"
         Me.BLClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -291,7 +291,7 @@ Partial Class vendedor
         Me.IsMdiContainer = True
         Me.MinimumSize = New System.Drawing.Size(950, 600)
         Me.Name = "vendedor"
-        Me.Text = "Libros"
+        Me.Text = "Vendedor"
         Me.P.ResumeLayout(False)
         Me.PClientes.ResumeLayout(False)
         Me.PVentas.ResumeLayout(False)
