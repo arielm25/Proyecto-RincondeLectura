@@ -32,9 +32,6 @@ Partial Class FModUsuario
         Me.TxtNom = New System.Windows.Forms.TextBox()
         Me.BModificar = New System.Windows.Forms.Button()
         Me.BCerrar = New System.Windows.Forms.Button()
-        Me.GBFoto = New System.Windows.Forms.GroupBox()
-        Me.PBAvatar = New System.Windows.Forms.PictureBox()
-        Me.BExaminar = New System.Windows.Forms.Button()
         Me.GBtipo = New System.Windows.Forms.GroupBox()
         Me.RBGerente = New System.Windows.Forms.RadioButton()
         Me.RBAdmin = New System.Windows.Forms.RadioButton()
@@ -45,8 +42,6 @@ Partial Class FModUsuario
         Me.GBdni.SuspendLayout()
         Me.GBApellido.SuspendLayout()
         Me.GBNombre.SuspendLayout()
-        Me.GBFoto.SuspendLayout()
-        CType(Me.PBAvatar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBtipo.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.SuspendLayout()
@@ -60,7 +55,6 @@ Partial Class FModUsuario
         Me.Panel1.Controls.Add(Me.GBNombre)
         Me.Panel1.Controls.Add(Me.BModificar)
         Me.Panel1.Controls.Add(Me.BCerrar)
-        Me.Panel1.Controls.Add(Me.GBFoto)
         Me.Panel1.Controls.Add(Me.GBtipo)
         Me.Panel1.Controls.Add(Me.GroupBox8)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -173,41 +167,6 @@ Partial Class FModUsuario
         Me.BCerrar.Text = "Cancelar"
         Me.BCerrar.UseVisualStyleBackColor = False
         '
-        'GBFoto
-        '
-        Me.GBFoto.BackColor = System.Drawing.Color.Transparent
-        Me.GBFoto.Controls.Add(Me.PBAvatar)
-        Me.GBFoto.Controls.Add(Me.BExaminar)
-        Me.GBFoto.ForeColor = System.Drawing.SystemColors.Window
-        Me.GBFoto.Location = New System.Drawing.Point(404, 93)
-        Me.GBFoto.Name = "GBFoto"
-        Me.GBFoto.Size = New System.Drawing.Size(193, 212)
-        Me.GBFoto.TabIndex = 46
-        Me.GBFoto.TabStop = False
-        Me.GBFoto.Text = "Foto del Usuario"
-        '
-        'PBAvatar
-        '
-        Me.PBAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PBAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PBAvatar.Location = New System.Drawing.Point(27, 31)
-        Me.PBAvatar.Name = "PBAvatar"
-        Me.PBAvatar.Size = New System.Drawing.Size(144, 126)
-        Me.PBAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PBAvatar.TabIndex = 16
-        Me.PBAvatar.TabStop = False
-        '
-        'BExaminar
-        '
-        Me.BExaminar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BExaminar.Location = New System.Drawing.Point(42, 171)
-        Me.BExaminar.Margin = New System.Windows.Forms.Padding(0)
-        Me.BExaminar.Name = "BExaminar"
-        Me.BExaminar.Size = New System.Drawing.Size(117, 27)
-        Me.BExaminar.TabIndex = 7
-        Me.BExaminar.Text = "Examinar"
-        Me.BExaminar.UseVisualStyleBackColor = False
-        '
         'GBtipo
         '
         Me.GBtipo.BackColor = System.Drawing.Color.Transparent
@@ -290,8 +249,6 @@ Partial Class FModUsuario
         Me.GBApellido.PerformLayout()
         Me.GBNombre.ResumeLayout(False)
         Me.GBNombre.PerformLayout()
-        Me.GBFoto.ResumeLayout(False)
-        CType(Me.PBAvatar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBtipo.ResumeLayout(False)
         Me.GBtipo.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
@@ -309,9 +266,6 @@ Partial Class FModUsuario
     Friend WithEvents TxtNom As TextBox
     Friend WithEvents BModificar As Button
     Friend WithEvents BCerrar As Button
-    Friend WithEvents GBFoto As GroupBox
-    Friend WithEvents PBAvatar As PictureBox
-    Friend WithEvents BExaminar As Button
     Friend WithEvents GBtipo As GroupBox
     Friend WithEvents RBGerente As RadioButton
     Friend WithEvents RBAdmin As RadioButton
