@@ -303,7 +303,7 @@
   <xs:element name="dbRincondeLecturaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbRincondeLecturaDataSet" msprop:Generator_UserDSName="dbRincondeLecturaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="autor" msprop:Generator_TableClassName="autorDataTable" msprop:Generator_TableVarName="tableautor" msprop:Generator_TablePropName="autor" msprop:Generator_RowDeletingName="autorRowDeleting" msprop:Generator_RowChangingName="autorRowChanging" msprop:Generator_RowEvHandlerName="autorRowChangeEventHandler" msprop:Generator_RowDeletedName="autorRowDeleted" msprop:Generator_UserTableName="autor" msprop:Generator_RowChangedName="autorRowChanged" msprop:Generator_RowEvArgName="autorRowChangeEvent" msprop:Generator_RowClassName="autorRow">
+        <xs:element name="autor" msprop:Generator_TableClassName="autorDataTable" msprop:Generator_TableVarName="tableautor" msprop:Generator_RowChangedName="autorRowChanged" msprop:Generator_TablePropName="autor" msprop:Generator_RowDeletingName="autorRowDeleting" msprop:Generator_RowChangingName="autorRowChanging" msprop:Generator_RowEvHandlerName="autorRowChangeEventHandler" msprop:Generator_RowDeletedName="autorRowDeleted" msprop:Generator_RowClassName="autorRow" msprop:Generator_UserTableName="autor" msprop:Generator_RowEvArgName="autorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idautor" msprop:Generator_ColumnVarNameInTable="columnidautor" msprop:Generator_ColumnPropNameInRow="idautor" msprop:Generator_ColumnPropNameInTable="idautorColumn" msprop:Generator_UserColumnName="idautor" type="xs:int" />
@@ -339,7 +339,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="cliente" msprop:Generator_TableClassName="clienteDataTable" msprop:Generator_TableVarName="tablecliente" msprop:Generator_TablePropName="cliente" msprop:Generator_RowDeletingName="clienteRowDeleting" msprop:Generator_RowChangingName="clienteRowChanging" msprop:Generator_RowEvHandlerName="clienteRowChangeEventHandler" msprop:Generator_RowDeletedName="clienteRowDeleted" msprop:Generator_UserTableName="cliente" msprop:Generator_RowChangedName="clienteRowChanged" msprop:Generator_RowEvArgName="clienteRowChangeEvent" msprop:Generator_RowClassName="clienteRow">
+        <xs:element name="cliente" msprop:Generator_TableClassName="clienteDataTable" msprop:Generator_TableVarName="tablecliente" msprop:Generator_RowChangedName="clienteRowChanged" msprop:Generator_TablePropName="cliente" msprop:Generator_RowDeletingName="clienteRowDeleting" msprop:Generator_RowChangingName="clienteRowChanging" msprop:Generator_RowEvHandlerName="clienteRowChangeEventHandler" msprop:Generator_RowDeletedName="clienteRowDeleted" msprop:Generator_RowClassName="clienteRow" msprop:Generator_UserTableName="cliente" msprop:Generator_RowEvArgName="clienteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="dnicli" msprop:Generator_ColumnVarNameInTable="columndnicli" msprop:Generator_ColumnPropNameInRow="dnicli" msprop:Generator_ColumnPropNameInTable="dnicliColumn" msprop:Generator_UserColumnName="dnicli" type="xs:int" />
@@ -375,7 +375,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="editorial" msprop:Generator_TableClassName="editorialDataTable" msprop:Generator_TableVarName="tableeditorial" msprop:Generator_TablePropName="editorial" msprop:Generator_RowDeletingName="editorialRowDeleting" msprop:Generator_RowChangingName="editorialRowChanging" msprop:Generator_RowEvHandlerName="editorialRowChangeEventHandler" msprop:Generator_RowDeletedName="editorialRowDeleted" msprop:Generator_UserTableName="editorial" msprop:Generator_RowChangedName="editorialRowChanged" msprop:Generator_RowEvArgName="editorialRowChangeEvent" msprop:Generator_RowClassName="editorialRow">
+        <xs:element name="editorial" msprop:Generator_TableClassName="editorialDataTable" msprop:Generator_TableVarName="tableeditorial" msprop:Generator_RowChangedName="editorialRowChanged" msprop:Generator_TablePropName="editorial" msprop:Generator_RowDeletingName="editorialRowDeleting" msprop:Generator_RowChangingName="editorialRowChanging" msprop:Generator_RowEvHandlerName="editorialRowChangeEventHandler" msprop:Generator_RowDeletedName="editorialRowDeleted" msprop:Generator_RowClassName="editorialRow" msprop:Generator_UserTableName="editorial" msprop:Generator_RowEvArgName="editorialRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ideditorial" msprop:Generator_ColumnVarNameInTable="columnideditorial" msprop:Generator_ColumnPropNameInRow="ideditorial" msprop:Generator_ColumnPropNameInTable="ideditorialColumn" msprop:Generator_UserColumnName="ideditorial" type="xs:int" />
@@ -419,7 +419,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="genero" msprop:Generator_TableClassName="generoDataTable" msprop:Generator_TableVarName="tablegenero" msprop:Generator_TablePropName="genero" msprop:Generator_RowDeletingName="generoRowDeleting" msprop:Generator_RowChangingName="generoRowChanging" msprop:Generator_RowEvHandlerName="generoRowChangeEventHandler" msprop:Generator_RowDeletedName="generoRowDeleted" msprop:Generator_UserTableName="genero" msprop:Generator_RowChangedName="generoRowChanged" msprop:Generator_RowEvArgName="generoRowChangeEvent" msprop:Generator_RowClassName="generoRow">
+        <xs:element name="genero" msprop:Generator_TableClassName="generoDataTable" msprop:Generator_TableVarName="tablegenero" msprop:Generator_RowChangedName="generoRowChanged" msprop:Generator_TablePropName="genero" msprop:Generator_RowDeletingName="generoRowDeleting" msprop:Generator_RowChangingName="generoRowChanging" msprop:Generator_RowEvHandlerName="generoRowChangeEventHandler" msprop:Generator_RowDeletedName="generoRowDeleted" msprop:Generator_RowClassName="generoRow" msprop:Generator_UserTableName="genero" msprop:Generator_RowEvArgName="generoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idgenero" msprop:Generator_ColumnVarNameInTable="columnidgenero" msprop:Generator_ColumnPropNameInRow="idgenero" msprop:Generator_ColumnPropNameInTable="idgeneroColumn" msprop:Generator_UserColumnName="idgenero" type="xs:int" />
@@ -440,7 +440,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="libro" msprop:Generator_TableClassName="libroDataTable" msprop:Generator_TableVarName="tablelibro" msprop:Generator_TablePropName="libro" msprop:Generator_RowDeletingName="libroRowDeleting" msprop:Generator_RowChangingName="libroRowChanging" msprop:Generator_RowEvHandlerName="libroRowChangeEventHandler" msprop:Generator_RowDeletedName="libroRowDeleted" msprop:Generator_UserTableName="libro" msprop:Generator_RowChangedName="libroRowChanged" msprop:Generator_RowEvArgName="libroRowChangeEvent" msprop:Generator_RowClassName="libroRow">
+        <xs:element name="libro" msprop:Generator_TableClassName="libroDataTable" msprop:Generator_TableVarName="tablelibro" msprop:Generator_RowChangedName="libroRowChanged" msprop:Generator_TablePropName="libro" msprop:Generator_RowDeletingName="libroRowDeleting" msprop:Generator_RowChangingName="libroRowChanging" msprop:Generator_RowEvHandlerName="libroRowChangeEventHandler" msprop:Generator_RowDeletedName="libroRowDeleted" msprop:Generator_RowClassName="libroRow" msprop:Generator_UserTableName="libro" msprop:Generator_RowEvArgName="libroRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="isbn" msprop:Generator_ColumnVarNameInTable="columnisbn" msprop:Generator_ColumnPropNameInRow="isbn" msprop:Generator_ColumnPropNameInTable="isbnColumn" msprop:Generator_UserColumnName="isbn" type="xs:int" />
@@ -476,7 +476,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usuario" msprop:Generator_TableClassName="usuarioDataTable" msprop:Generator_TableVarName="tableusuario" msprop:Generator_TablePropName="usuario" msprop:Generator_RowDeletingName="usuarioRowDeleting" msprop:Generator_RowChangingName="usuarioRowChanging" msprop:Generator_RowEvHandlerName="usuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="usuarioRowDeleted" msprop:Generator_UserTableName="usuario" msprop:Generator_RowChangedName="usuarioRowChanged" msprop:Generator_RowEvArgName="usuarioRowChangeEvent" msprop:Generator_RowClassName="usuarioRow">
+        <xs:element name="usuario" msprop:Generator_TableClassName="usuarioDataTable" msprop:Generator_TableVarName="tableusuario" msprop:Generator_RowChangedName="usuarioRowChanged" msprop:Generator_TablePropName="usuario" msprop:Generator_RowDeletingName="usuarioRowDeleting" msprop:Generator_RowChangingName="usuarioRowChanging" msprop:Generator_RowEvHandlerName="usuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="usuarioRowDeleted" msprop:Generator_RowClassName="usuarioRow" msprop:Generator_UserTableName="usuario" msprop:Generator_RowEvArgName="usuarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="dni" msprop:Generator_ColumnVarNameInTable="columndni" msprop:Generator_ColumnPropNameInRow="dni" msprop:Generator_ColumnPropNameInTable="dniColumn" msprop:Generator_UserColumnName="dni" type="xs:int" />
@@ -526,7 +526,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ventacabecera" msprop:Generator_TableClassName="ventacabeceraDataTable" msprop:Generator_TableVarName="tableventacabecera" msprop:Generator_TablePropName="ventacabecera" msprop:Generator_RowDeletingName="ventacabeceraRowDeleting" msprop:Generator_RowChangingName="ventacabeceraRowChanging" msprop:Generator_RowEvHandlerName="ventacabeceraRowChangeEventHandler" msprop:Generator_RowDeletedName="ventacabeceraRowDeleted" msprop:Generator_UserTableName="ventacabecera" msprop:Generator_RowChangedName="ventacabeceraRowChanged" msprop:Generator_RowEvArgName="ventacabeceraRowChangeEvent" msprop:Generator_RowClassName="ventacabeceraRow">
+        <xs:element name="ventacabecera" msprop:Generator_TableClassName="ventacabeceraDataTable" msprop:Generator_TableVarName="tableventacabecera" msprop:Generator_RowChangedName="ventacabeceraRowChanged" msprop:Generator_TablePropName="ventacabecera" msprop:Generator_RowDeletingName="ventacabeceraRowDeleting" msprop:Generator_RowChangingName="ventacabeceraRowChanging" msprop:Generator_RowEvHandlerName="ventacabeceraRowChangeEventHandler" msprop:Generator_RowDeletedName="ventacabeceraRowDeleted" msprop:Generator_RowClassName="ventacabeceraRow" msprop:Generator_UserTableName="ventacabecera" msprop:Generator_RowEvArgName="ventacabeceraRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idventa" msprop:Generator_ColumnVarNameInTable="columnidventa" msprop:Generator_ColumnPropNameInRow="idventa" msprop:Generator_ColumnPropNameInTable="idventaColumn" msprop:Generator_UserColumnName="idventa" type="xs:int" />
@@ -546,7 +546,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ventadetalle" msprop:Generator_TableClassName="ventadetalleDataTable" msprop:Generator_TableVarName="tableventadetalle" msprop:Generator_TablePropName="ventadetalle" msprop:Generator_RowDeletingName="ventadetalleRowDeleting" msprop:Generator_RowChangingName="ventadetalleRowChanging" msprop:Generator_RowEvHandlerName="ventadetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="ventadetalleRowDeleted" msprop:Generator_UserTableName="ventadetalle" msprop:Generator_RowChangedName="ventadetalleRowChanged" msprop:Generator_RowEvArgName="ventadetalleRowChangeEvent" msprop:Generator_RowClassName="ventadetalleRow">
+        <xs:element name="ventadetalle" msprop:Generator_TableClassName="ventadetalleDataTable" msprop:Generator_TableVarName="tableventadetalle" msprop:Generator_RowChangedName="ventadetalleRowChanged" msprop:Generator_TablePropName="ventadetalle" msprop:Generator_RowDeletingName="ventadetalleRowDeleting" msprop:Generator_RowChangingName="ventadetalleRowChanging" msprop:Generator_RowEvHandlerName="ventadetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="ventadetalleRowDeleted" msprop:Generator_RowClassName="ventadetalleRow" msprop:Generator_UserTableName="ventadetalle" msprop:Generator_RowEvArgName="ventadetalleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idventa" msprop:Generator_ColumnVarNameInTable="columnidventa" msprop:Generator_ColumnPropNameInRow="idventa" msprop:Generator_ColumnPropNameInTable="idventaColumn" msprop:Generator_UserColumnName="idventa" type="xs:int" />
@@ -560,4 +560,15 @@
       </xs:choice>
     </xs:complexType>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="fk_idautor" msdata:parent="autor" msdata:child="libro" msdata:parentkey="idautor" msdata:childkey="idautor" msprop:Generator_UserChildTable="libro" msprop:Generator_ChildPropName="GetlibroRows" msprop:Generator_UserRelationName="fk_idautor" msprop:Generator_ParentPropName="autorRow" msprop:Generator_RelationVarName="relationfk_idautor" msprop:Generator_UserParentTable="autor" />
+      <msdata:Relationship name="fk_ideditorial" msdata:parent="editorial" msdata:child="libro" msdata:parentkey="ideditorial" msdata:childkey="ideditorial" msprop:Generator_UserChildTable="libro" msprop:Generator_ChildPropName="GetlibroRows" msprop:Generator_UserRelationName="fk_ideditorial" msprop:Generator_ParentPropName="editorialRow" msprop:Generator_RelationVarName="relationfk_ideditorial" msprop:Generator_UserParentTable="editorial" />
+      <msdata:Relationship name="fk_idgenero" msdata:parent="genero" msdata:child="libro" msdata:parentkey="idgenero" msdata:childkey="idgenero" msprop:Generator_UserChildTable="libro" msprop:Generator_ChildPropName="GetlibroRows" msprop:Generator_UserRelationName="fk_idgenero" msprop:Generator_ParentPropName="generoRow" msprop:Generator_RelationVarName="relationfk_idgenero" msprop:Generator_UserParentTable="genero" />
+      <msdata:Relationship name="fk_dnicli" msdata:parent="cliente" msdata:child="ventacabecera" msdata:parentkey="dnicli" msdata:childkey="dnicli" msprop:Generator_UserChildTable="ventacabecera" msprop:Generator_ChildPropName="GetventacabeceraRows" msprop:Generator_UserRelationName="fk_dnicli" msprop:Generator_ParentPropName="clienteRow" msprop:Generator_RelationVarName="relationfk_dnicli" msprop:Generator_UserParentTable="cliente" />
+      <msdata:Relationship name="fk_dniusuario" msdata:parent="usuario" msdata:child="ventacabecera" msdata:parentkey="dni" msdata:childkey="dni" msprop:Generator_UserChildTable="ventacabecera" msprop:Generator_ChildPropName="GetventacabeceraRows" msprop:Generator_UserRelationName="fk_dniusuario" msprop:Generator_ParentPropName="usuarioRow" msprop:Generator_RelationVarName="relationfk_dniusuario" msprop:Generator_UserParentTable="usuario" />
+      <msdata:Relationship name="fk_idventa" msdata:parent="ventacabecera" msdata:child="ventadetalle" msdata:parentkey="idventa" msdata:childkey="idventa" msprop:Generator_UserChildTable="ventadetalle" msprop:Generator_ChildPropName="GetventadetalleRows" msprop:Generator_UserRelationName="fk_idventa" msprop:Generator_ParentPropName="ventacabeceraRow" msprop:Generator_RelationVarName="relationfk_idventa" msprop:Generator_UserParentTable="ventacabecera" />
+      <msdata:Relationship name="fk_isbn" msdata:parent="libro" msdata:child="ventadetalle" msdata:parentkey="isbn" msdata:childkey="isbn" msprop:Generator_UserChildTable="ventadetalle" msprop:Generator_ChildPropName="GetventadetalleRows" msprop:Generator_UserRelationName="fk_isbn" msprop:Generator_ParentPropName="libroRow" msprop:Generator_RelationVarName="relationfk_isbn" msprop:Generator_UserParentTable="libro" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

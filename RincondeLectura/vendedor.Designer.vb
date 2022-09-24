@@ -24,27 +24,19 @@ Partial Class vendedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.P = New System.Windows.Forms.Panel()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
-        Me.PClientes = New System.Windows.Forms.Panel()
-        Me.BLClientes = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.LClientes = New System.Windows.Forms.Button()
         Me.BClientes = New System.Windows.Forms.Button()
-        Me.PVentas = New System.Windows.Forms.Panel()
-        Me.BRVentas = New System.Windows.Forms.Button()
-        Me.BLVentas = New System.Windows.Forms.Button()
-        Me.BVentas = New System.Windows.Forms.Button()
-        Me.PLibros = New System.Windows.Forms.Panel()
-        Me.BLEditorial = New System.Windows.Forms.Button()
-        Me.BLAutores = New System.Windows.Forms.Button()
-        Me.BLLibros = New System.Windows.Forms.Button()
-        Me.BLibros = New System.Windows.Forms.Button()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.PLogoVendedor = New System.Windows.Forms.Panel()
         Me.LVendedor = New System.Windows.Forms.Label()
-        Me.PLogoVendedorAbajo = New System.Windows.Forms.Panel()
-        Me.PLogoCentro = New System.Windows.Forms.Panel()
         Me.P.SuspendLayout()
-        Me.PClientes.SuspendLayout()
-        Me.PVentas.SuspendLayout()
-        Me.PLibros.SuspendLayout()
         Me.PLogoVendedor.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,17 +44,148 @@ Partial Class vendedor
         '
         Me.P.AutoScroll = True
         Me.P.BackColor = System.Drawing.Color.White
+        Me.P.Controls.Add(Me.Button6)
+        Me.P.Controls.Add(Me.Button7)
+        Me.P.Controls.Add(Me.Button8)
+        Me.P.Controls.Add(Me.Button9)
+        Me.P.Controls.Add(Me.Button3)
+        Me.P.Controls.Add(Me.Button4)
+        Me.P.Controls.Add(Me.Button5)
+        Me.P.Controls.Add(Me.LClientes)
+        Me.P.Controls.Add(Me.BClientes)
         Me.P.Controls.Add(Me.BCerrarSesion)
-        Me.P.Controls.Add(Me.PClientes)
-        Me.P.Controls.Add(Me.PVentas)
-        Me.P.Controls.Add(Me.PLibros)
-        Me.P.Controls.Add(Me.BLibros)
         Me.P.Controls.Add(Me.PLogoVendedor)
         Me.P.Dock = System.Windows.Forms.DockStyle.Left
         Me.P.Location = New System.Drawing.Point(0, 0)
         Me.P.Name = "P"
-        Me.P.Size = New System.Drawing.Size(142, 561)
-        Me.P.TabIndex = 7
+        Me.P.Size = New System.Drawing.Size(142, 453)
+        Me.P.TabIndex = 9
+        '
+        'Button6
+        '
+        Me.Button6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Location = New System.Drawing.Point(0, 296)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button6.Size = New System.Drawing.Size(142, 27)
+        Me.Button6.TabIndex = 44
+        Me.Button6.Text = "Listas de Editorial"
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Location = New System.Drawing.Point(0, 273)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button7.Size = New System.Drawing.Size(142, 23)
+        Me.Button7.TabIndex = 43
+        Me.Button7.Text = "Listas de Autores"
+        Me.Button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Location = New System.Drawing.Point(0, 244)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button8.Size = New System.Drawing.Size(142, 29)
+        Me.Button8.TabIndex = 42
+        Me.Button8.Text = "Lista de Libros"
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.Silver
+        Me.Button9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Location = New System.Drawing.Point(0, 220)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Button9.Size = New System.Drawing.Size(142, 24)
+        Me.Button9.TabIndex = 45
+        Me.Button9.Text = "Libros"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(0, 198)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button3.Size = New System.Drawing.Size(142, 22)
+        Me.Button3.TabIndex = 40
+        Me.Button3.Text = "Realizar Ventas"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Location = New System.Drawing.Point(0, 176)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button4.Size = New System.Drawing.Size(142, 22)
+        Me.Button4.TabIndex = 39
+        Me.Button4.Text = "Listas de Ventas"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.Silver
+        Me.Button5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Location = New System.Drawing.Point(0, 149)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Button5.Size = New System.Drawing.Size(142, 27)
+        Me.Button5.TabIndex = 41
+        Me.Button5.Text = "Ventas"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'LClientes
+        '
+        Me.LClientes.BackColor = System.Drawing.Color.White
+        Me.LClientes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LClientes.Location = New System.Drawing.Point(0, 123)
+        Me.LClientes.Name = "LClientes"
+        Me.LClientes.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.LClientes.Size = New System.Drawing.Size(142, 26)
+        Me.LClientes.TabIndex = 37
+        Me.LClientes.Text = "Listas de Clientes"
+        Me.LClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LClientes.UseVisualStyleBackColor = False
+        '
+        'BClientes
+        '
+        Me.BClientes.BackColor = System.Drawing.Color.Silver
+        Me.BClientes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BClientes.FlatAppearance.BorderSize = 0
+        Me.BClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BClientes.Location = New System.Drawing.Point(0, 100)
+        Me.BClientes.Name = "BClientes"
+        Me.BClientes.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.BClientes.Size = New System.Drawing.Size(142, 23)
+        Me.BClientes.TabIndex = 38
+        Me.BClientes.Text = "Clientes"
+        Me.BClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BClientes.UseVisualStyleBackColor = False
         '
         'BCerrarSesion
         '
@@ -71,7 +194,7 @@ Partial Class vendedor
         Me.BCerrarSesion.FlatAppearance.BorderSize = 0
         Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.Control
-        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 522)
+        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 414)
         Me.BCerrarSesion.Name = "BCerrarSesion"
         Me.BCerrarSesion.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.BCerrarSesion.Size = New System.Drawing.Size(142, 39)
@@ -79,165 +202,6 @@ Partial Class vendedor
         Me.BCerrarSesion.Text = "Cerrar Sesion"
         Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BCerrarSesion.UseVisualStyleBackColor = False
-        '
-        'PClientes
-        '
-        Me.PClientes.Controls.Add(Me.BLClientes)
-        Me.PClientes.Controls.Add(Me.BClientes)
-        Me.PClientes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PClientes.Location = New System.Drawing.Point(0, 274)
-        Me.PClientes.Name = "PClientes"
-        Me.PClientes.Size = New System.Drawing.Size(142, 83)
-        Me.PClientes.TabIndex = 13
-        '
-        'BLClientes
-        '
-        Me.BLClientes.BackColor = System.Drawing.Color.White
-        Me.BLClientes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLClientes.Location = New System.Drawing.Point(0, 23)
-        Me.BLClientes.Name = "BLClientes"
-        Me.BLClientes.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLClientes.Size = New System.Drawing.Size(142, 26)
-        Me.BLClientes.TabIndex = 34
-        Me.BLClientes.Text = "Listas de Clientes"
-        Me.BLClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLClientes.UseVisualStyleBackColor = False
-        '
-        'BClientes
-        '
-        Me.BClientes.BackColor = System.Drawing.Color.Silver
-        Me.BClientes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BClientes.FlatAppearance.BorderSize = 0
-        Me.BClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BClientes.Location = New System.Drawing.Point(0, 0)
-        Me.BClientes.Name = "BClientes"
-        Me.BClientes.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BClientes.Size = New System.Drawing.Size(142, 23)
-        Me.BClientes.TabIndex = 35
-        Me.BClientes.Text = "Clientes"
-        Me.BClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BClientes.UseVisualStyleBackColor = False
-        '
-        'PVentas
-        '
-        Me.PVentas.Controls.Add(Me.BRVentas)
-        Me.PVentas.Controls.Add(Me.BLVentas)
-        Me.PVentas.Controls.Add(Me.BVentas)
-        Me.PVentas.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PVentas.Location = New System.Drawing.Point(0, 202)
-        Me.PVentas.Name = "PVentas"
-        Me.PVentas.Size = New System.Drawing.Size(142, 72)
-        Me.PVentas.TabIndex = 12
-        '
-        'BRVentas
-        '
-        Me.BRVentas.BackColor = System.Drawing.Color.White
-        Me.BRVentas.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BRVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BRVentas.Location = New System.Drawing.Point(0, 49)
-        Me.BRVentas.Name = "BRVentas"
-        Me.BRVentas.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BRVentas.Size = New System.Drawing.Size(142, 22)
-        Me.BRVentas.TabIndex = 28
-        Me.BRVentas.Text = "Realizar Ventas"
-        Me.BRVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BRVentas.UseVisualStyleBackColor = False
-        '
-        'BLVentas
-        '
-        Me.BLVentas.BackColor = System.Drawing.Color.White
-        Me.BLVentas.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLVentas.Location = New System.Drawing.Point(0, 27)
-        Me.BLVentas.Name = "BLVentas"
-        Me.BLVentas.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLVentas.Size = New System.Drawing.Size(142, 22)
-        Me.BLVentas.TabIndex = 27
-        Me.BLVentas.Text = "Listas de Ventas"
-        Me.BLVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLVentas.UseVisualStyleBackColor = False
-        '
-        'BVentas
-        '
-        Me.BVentas.BackColor = System.Drawing.Color.Silver
-        Me.BVentas.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BVentas.FlatAppearance.BorderSize = 0
-        Me.BVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BVentas.Location = New System.Drawing.Point(0, 0)
-        Me.BVentas.Name = "BVentas"
-        Me.BVentas.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BVentas.Size = New System.Drawing.Size(142, 27)
-        Me.BVentas.TabIndex = 29
-        Me.BVentas.Text = "Ventas"
-        Me.BVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BVentas.UseVisualStyleBackColor = False
-        '
-        'PLibros
-        '
-        Me.PLibros.BackColor = System.Drawing.Color.White
-        Me.PLibros.Controls.Add(Me.BLEditorial)
-        Me.PLibros.Controls.Add(Me.BLAutores)
-        Me.PLibros.Controls.Add(Me.BLLibros)
-        Me.PLibros.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PLibros.Location = New System.Drawing.Point(0, 124)
-        Me.PLibros.Name = "PLibros"
-        Me.PLibros.Size = New System.Drawing.Size(142, 78)
-        Me.PLibros.TabIndex = 11
-        '
-        'BLEditorial
-        '
-        Me.BLEditorial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLEditorial.Location = New System.Drawing.Point(0, 52)
-        Me.BLEditorial.Name = "BLEditorial"
-        Me.BLEditorial.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLEditorial.Size = New System.Drawing.Size(142, 26)
-        Me.BLEditorial.TabIndex = 2
-        Me.BLEditorial.Text = "Listas de Editorial"
-        Me.BLEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLEditorial.UseVisualStyleBackColor = True
-        '
-        'BLAutores
-        '
-        Me.BLAutores.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLAutores.Location = New System.Drawing.Point(0, 29)
-        Me.BLAutores.Name = "BLAutores"
-        Me.BLAutores.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLAutores.Size = New System.Drawing.Size(142, 23)
-        Me.BLAutores.TabIndex = 1
-        Me.BLAutores.Text = "Listas de Autores"
-        Me.BLAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLAutores.UseVisualStyleBackColor = True
-        '
-        'BLLibros
-        '
-        Me.BLLibros.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLLibros.Location = New System.Drawing.Point(0, 0)
-        Me.BLLibros.Name = "BLLibros"
-        Me.BLLibros.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLLibros.Size = New System.Drawing.Size(142, 29)
-        Me.BLLibros.TabIndex = 0
-        Me.BLLibros.Text = "Lista de Libros"
-        Me.BLLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLLibros.UseVisualStyleBackColor = True
-        '
-        'BLibros
-        '
-        Me.BLibros.BackColor = System.Drawing.Color.Silver
-        Me.BLibros.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLibros.FlatAppearance.BorderSize = 0
-        Me.BLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLibros.Location = New System.Drawing.Point(0, 100)
-        Me.BLibros.Name = "BLibros"
-        Me.BLibros.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BLibros.Size = New System.Drawing.Size(142, 24)
-        Me.BLibros.TabIndex = 9
-        Me.BLibros.Text = "Libros"
-        Me.BLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLibros.UseVisualStyleBackColor = False
         '
         'PLogoVendedor
         '
@@ -260,42 +224,16 @@ Partial Class vendedor
         Me.LVendedor.TabIndex = 0
         Me.LVendedor.Text = "Mi Usuario"
         '
-        'PLogoVendedorAbajo
-        '
-        Me.PLogoVendedorAbajo.BackColor = System.Drawing.SystemColors.Control
-        Me.PLogoVendedorAbajo.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PLogoVendedorAbajo.Location = New System.Drawing.Point(142, 441)
-        Me.PLogoVendedorAbajo.Name = "PLogoVendedorAbajo"
-        Me.PLogoVendedorAbajo.Size = New System.Drawing.Size(792, 120)
-        Me.PLogoVendedorAbajo.TabIndex = 9
-        '
-        'PLogoCentro
-        '
-        Me.PLogoCentro.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.PLogoCentro.BackgroundImage = Global.RincondeLectura.My.Resources.Resources.logo
-        Me.PLogoCentro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PLogoCentro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PLogoCentro.Location = New System.Drawing.Point(142, 0)
-        Me.PLogoCentro.Name = "PLogoCentro"
-        Me.PLogoCentro.Size = New System.Drawing.Size(792, 441)
-        Me.PLogoCentro.TabIndex = 10
-        '
         'vendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(934, 561)
-        Me.Controls.Add(Me.PLogoCentro)
-        Me.Controls.Add(Me.PLogoVendedorAbajo)
+        Me.ClientSize = New System.Drawing.Size(632, 453)
         Me.Controls.Add(Me.P)
         Me.IsMdiContainer = True
-        Me.MinimumSize = New System.Drawing.Size(950, 600)
         Me.Name = "vendedor"
         Me.Text = "Vendedor"
         Me.P.ResumeLayout(False)
-        Me.PClientes.ResumeLayout(False)
-        Me.PVentas.ResumeLayout(False)
-        Me.PLibros.ResumeLayout(False)
         Me.PLogoVendedor.ResumeLayout(False)
         Me.PLogoVendedor.PerformLayout()
         Me.ResumeLayout(False)
@@ -303,21 +241,16 @@ Partial Class vendedor
     End Sub
 
     Friend WithEvents P As Panel
-    Friend WithEvents BLibros As Button
-    Friend WithEvents PLogoVendedor As Panel
-    Friend WithEvents PClientes As Panel
-    Friend WithEvents BLClientes As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents LClientes As Button
     Friend WithEvents BClientes As Button
-    Friend WithEvents PVentas As Panel
-    Friend WithEvents BRVentas As Button
-    Friend WithEvents BLVentas As Button
-    Friend WithEvents BVentas As Button
-    Friend WithEvents PLibros As Panel
-    Friend WithEvents BLEditorial As Button
-    Friend WithEvents BLLibros As Button
     Friend WithEvents BCerrarSesion As Button
-    Friend WithEvents BLAutores As Button
+    Friend WithEvents PLogoVendedor As Panel
     Friend WithEvents LVendedor As Label
-    Friend WithEvents PLogoVendedorAbajo As Panel
-    Friend WithEvents PLogoCentro As Panel
 End Class

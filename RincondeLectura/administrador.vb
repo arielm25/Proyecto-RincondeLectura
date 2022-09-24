@@ -77,13 +77,8 @@ Public Class administrador
 
     Private m_ChildFormNumber As Integer
 
-<<<<<<< HEAD:RincondeLectura/MDIParent2.vb
-    Private Sub MDIParent2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-=======
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
         InicioSesion.Show()
         Me.Close()
->>>>>>> Formularios de nuevo libro,genero y editorial:RincondeLectura/administrador.vb
     End Sub
 End Class

@@ -41,6 +41,20 @@ Partial Public Class dbRincondeLecturaDataSet
     
     Private tableventadetalle As ventadetalleDataTable
     
+    Private relationfk_idautor As Global.System.Data.DataRelation
+    
+    Private relationfk_ideditorial As Global.System.Data.DataRelation
+    
+    Private relationfk_idgenero As Global.System.Data.DataRelation
+    
+    Private relationfk_dnicli As Global.System.Data.DataRelation
+    
+    Private relationfk_dniusuario As Global.System.Data.DataRelation
+    
+    Private relationfk_idventa As Global.System.Data.DataRelation
+    
+    Private relationfk_isbn As Global.System.Data.DataRelation
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -362,6 +376,13 @@ Partial Public Class dbRincondeLecturaDataSet
                 Me.tableventadetalle.InitVars
             End If
         End If
+        Me.relationfk_idautor = Me.Relations("fk_idautor")
+        Me.relationfk_ideditorial = Me.Relations("fk_ideditorial")
+        Me.relationfk_idgenero = Me.Relations("fk_idgenero")
+        Me.relationfk_dnicli = Me.Relations("fk_dnicli")
+        Me.relationfk_dniusuario = Me.Relations("fk_dniusuario")
+        Me.relationfk_idventa = Me.Relations("fk_idventa")
+        Me.relationfk_isbn = Me.Relations("fk_isbn")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -388,6 +409,20 @@ Partial Public Class dbRincondeLecturaDataSet
         MyBase.Tables.Add(Me.tableventacabecera)
         Me.tableventadetalle = New ventadetalleDataTable()
         MyBase.Tables.Add(Me.tableventadetalle)
+        Me.relationfk_idautor = New Global.System.Data.DataRelation("fk_idautor", New Global.System.Data.DataColumn() {Me.tableautor.idautorColumn}, New Global.System.Data.DataColumn() {Me.tablelibro.idautorColumn}, false)
+        Me.Relations.Add(Me.relationfk_idautor)
+        Me.relationfk_ideditorial = New Global.System.Data.DataRelation("fk_ideditorial", New Global.System.Data.DataColumn() {Me.tableeditorial.ideditorialColumn}, New Global.System.Data.DataColumn() {Me.tablelibro.ideditorialColumn}, false)
+        Me.Relations.Add(Me.relationfk_ideditorial)
+        Me.relationfk_idgenero = New Global.System.Data.DataRelation("fk_idgenero", New Global.System.Data.DataColumn() {Me.tablegenero.idgeneroColumn}, New Global.System.Data.DataColumn() {Me.tablelibro.idgeneroColumn}, false)
+        Me.Relations.Add(Me.relationfk_idgenero)
+        Me.relationfk_dnicli = New Global.System.Data.DataRelation("fk_dnicli", New Global.System.Data.DataColumn() {Me.tablecliente.dnicliColumn}, New Global.System.Data.DataColumn() {Me.tableventacabecera.dnicliColumn}, false)
+        Me.Relations.Add(Me.relationfk_dnicli)
+        Me.relationfk_dniusuario = New Global.System.Data.DataRelation("fk_dniusuario", New Global.System.Data.DataColumn() {Me.tableusuario.dniColumn}, New Global.System.Data.DataColumn() {Me.tableventacabecera.dniColumn}, false)
+        Me.Relations.Add(Me.relationfk_dniusuario)
+        Me.relationfk_idventa = New Global.System.Data.DataRelation("fk_idventa", New Global.System.Data.DataColumn() {Me.tableventacabecera.idventaColumn}, New Global.System.Data.DataColumn() {Me.tableventadetalle.idventaColumn}, false)
+        Me.Relations.Add(Me.relationfk_idventa)
+        Me.relationfk_isbn = New Global.System.Data.DataRelation("fk_isbn", New Global.System.Data.DataColumn() {Me.tablelibro.isbnColumn}, New Global.System.Data.DataColumn() {Me.tableventadetalle.isbnColumn}, false)
+        Me.Relations.Add(Me.relationfk_isbn)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2011,9 +2046,18 @@ Partial Public Class dbRincondeLecturaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddlibroRow(ByVal isbn As Integer, ByVal titulo As String, ByVal idautor As Integer, ByVal idgenero As Integer, ByVal ideditorial As Integer, ByVal sinopsis As String, ByVal precio As Double, ByVal stockmin As Integer, ByVal stock As Integer, ByVal añoedicion As Date, ByVal estado As String, ByVal portada() As Byte) As libroRow
+        Public Overloads Function AddlibroRow(ByVal isbn As Integer, ByVal titulo As String, ByVal parentautorRowByfk_idautor As autorRow, ByVal parentgeneroRowByfk_idgenero As generoRow, ByVal parenteditorialRowByfk_ideditorial As editorialRow, ByVal sinopsis As String, ByVal precio As Double, ByVal stockmin As Integer, ByVal stock As Integer, ByVal añoedicion As Date, ByVal estado As String, ByVal portada() As Byte) As libroRow
             Dim rowlibroRow As libroRow = CType(Me.NewRow,libroRow)
-            Dim columnValuesArray() As Object = New Object() {isbn, titulo, idautor, idgenero, ideditorial, sinopsis, precio, stockmin, stock, añoedicion, estado, portada}
+            Dim columnValuesArray() As Object = New Object() {isbn, titulo, Nothing, Nothing, Nothing, sinopsis, precio, stockmin, stock, añoedicion, estado, portada}
+            If (Not (parentautorRowByfk_idautor) Is Nothing) Then
+                columnValuesArray(2) = parentautorRowByfk_idautor(0)
+            End If
+            If (Not (parentgeneroRowByfk_idgenero) Is Nothing) Then
+                columnValuesArray(3) = parentgeneroRowByfk_idgenero(0)
+            End If
+            If (Not (parenteditorialRowByfk_ideditorial) Is Nothing) Then
+                columnValuesArray(4) = parenteditorialRowByfk_ideditorial(0)
+            End If
             rowlibroRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowlibroRow)
             Return rowlibroRow
@@ -2736,9 +2780,15 @@ Partial Public Class dbRincondeLecturaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddventacabeceraRow(ByVal idventa As Integer, ByVal dnicli As Integer, ByVal dni As Integer, ByVal tipopago As String, ByVal subtotal As Double, ByVal descuento As Double, ByVal total As Double, ByVal fechaventa As Date) As ventacabeceraRow
+        Public Overloads Function AddventacabeceraRow(ByVal idventa As Integer, ByVal parentclienteRowByfk_dnicli As clienteRow, ByVal parentusuarioRowByfk_dniusuario As usuarioRow, ByVal tipopago As String, ByVal subtotal As Double, ByVal descuento As Double, ByVal total As Double, ByVal fechaventa As Date) As ventacabeceraRow
             Dim rowventacabeceraRow As ventacabeceraRow = CType(Me.NewRow,ventacabeceraRow)
-            Dim columnValuesArray() As Object = New Object() {idventa, dnicli, dni, tipopago, subtotal, descuento, total, fechaventa}
+            Dim columnValuesArray() As Object = New Object() {idventa, Nothing, Nothing, tipopago, subtotal, descuento, total, fechaventa}
+            If (Not (parentclienteRowByfk_dnicli) Is Nothing) Then
+                columnValuesArray(1) = parentclienteRowByfk_dnicli(0)
+            End If
+            If (Not (parentusuarioRowByfk_dniusuario) Is Nothing) Then
+                columnValuesArray(2) = parentusuarioRowByfk_dniusuario(0)
+            End If
             rowventacabeceraRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowventacabeceraRow)
             Return rowventacabeceraRow
@@ -3058,9 +3108,15 @@ Partial Public Class dbRincondeLecturaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddventadetalleRow(ByVal idventa As Integer, ByVal isbn As Integer, ByVal cant As Integer, ByVal precio As Double, ByVal importe As Double) As ventadetalleRow
+        Public Overloads Function AddventadetalleRow(ByVal parentventacabeceraRowByfk_idventa As ventacabeceraRow, ByVal parentlibroRowByfk_isbn As libroRow, ByVal cant As Integer, ByVal precio As Double, ByVal importe As Double) As ventadetalleRow
             Dim rowventadetalleRow As ventadetalleRow = CType(Me.NewRow,ventadetalleRow)
-            Dim columnValuesArray() As Object = New Object() {idventa, isbn, cant, precio, importe}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, cant, precio, importe}
+            If (Not (parentventacabeceraRowByfk_idventa) Is Nothing) Then
+                columnValuesArray(0) = parentventacabeceraRowByfk_idventa(0)
+            End If
+            If (Not (parentlibroRowByfk_isbn) Is Nothing) Then
+                columnValuesArray(1) = parentlibroRowByfk_isbn(0)
+            End If
             rowventadetalleRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowventadetalleRow)
             Return rowventadetalleRow
@@ -3333,6 +3389,16 @@ Partial Public Class dbRincondeLecturaDataSet
         Public Sub SetfotoNull()
             Me(Me.tableautor.fotoColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetlibroRows() As libroRow()
+            If (Me.Table.ChildRelations("fk_idautor") Is Nothing) Then
+                Return New libroRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_idautor")),libroRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3415,6 +3481,16 @@ Partial Public Class dbRincondeLecturaDataSet
                 Me(Me.tablecliente.estadoColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetventacabeceraRows() As ventacabeceraRow()
+            If (Me.Table.ChildRelations("fk_dnicli") Is Nothing) Then
+                Return New ventacabeceraRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_dnicli")),ventacabeceraRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3535,6 +3611,16 @@ Partial Public Class dbRincondeLecturaDataSet
         Public Sub SetlogoNull()
             Me(Me.tableeditorial.logoColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetlibroRows() As libroRow()
+            If (Me.Table.ChildRelations("fk_ideditorial") Is Nothing) Then
+                Return New libroRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_ideditorial")),libroRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3584,6 +3670,16 @@ Partial Public Class dbRincondeLecturaDataSet
                 Me(Me.tablegenero.estadoColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetlibroRows() As libroRow()
+            If (Me.Table.ChildRelations("fk_idgenero") Is Nothing) Then
+                Return New libroRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_idgenero")),libroRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3739,6 +3835,39 @@ Partial Public Class dbRincondeLecturaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property autorRow() As autorRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_idautor")),autorRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("fk_idautor"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property editorialRow() As editorialRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_ideditorial")),editorialRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("fk_ideditorial"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property generoRow() As generoRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_idgenero")),generoRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("fk_idgenero"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsportadaNull() As Boolean
             Return Me.IsNull(Me.tablelibro.portadaColumn)
         End Function
@@ -3748,6 +3877,16 @@ Partial Public Class dbRincondeLecturaDataSet
         Public Sub SetportadaNull()
             Me(Me.tablelibro.portadaColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetventadetalleRows() As ventadetalleRow()
+            If (Me.Table.ChildRelations("fk_isbn") Is Nothing) Then
+                Return New ventadetalleRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_isbn")),ventadetalleRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3868,6 +4007,16 @@ Partial Public Class dbRincondeLecturaDataSet
         Public Sub SetfotoNull()
             Me(Me.tableusuario.fotoColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetventacabeceraRows() As ventacabeceraRow()
+            If (Me.Table.ChildRelations("fk_dniusuario") Is Nothing) Then
+                Return New ventacabeceraRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_dniusuario")),ventacabeceraRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -3972,6 +4121,38 @@ Partial Public Class dbRincondeLecturaDataSet
                 Me(Me.tableventacabecera.fechaventaColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property clienteRow() As clienteRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_dnicli")),clienteRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("fk_dnicli"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property usuarioRow() As usuarioRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_dniusuario")),usuarioRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("fk_dniusuario"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetventadetalleRows() As ventadetalleRow()
+            If (Me.Table.ChildRelations("fk_idventa") Is Nothing) Then
+                Return New ventadetalleRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("fk_idventa")),ventadetalleRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -4041,6 +4222,28 @@ Partial Public Class dbRincondeLecturaDataSet
             End Get
             Set
                 Me(Me.tableventadetalle.importeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ventacabeceraRow() As ventacabeceraRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_idventa")),ventacabeceraRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("fk_idventa"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property libroRow() As libroRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_isbn")),libroRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("fk_isbn"))
             End Set
         End Property
     End Class
@@ -6684,21 +6887,30 @@ Namespace dbRincondeLecturaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As dbRincondeLecturaDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._autorTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.autor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._autorTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._clienteTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.cliente.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._clienteTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._usuarioTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.usuario.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._usuarioTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._autorTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.autor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._autorTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -6726,15 +6938,6 @@ Namespace dbRincondeLecturaDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._libroTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._usuarioTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.usuario.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._usuarioTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -6766,19 +6969,27 @@ Namespace dbRincondeLecturaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As dbRincondeLecturaDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._autorTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.autor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._autorTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._clienteTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.cliente.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._clienteTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._usuarioTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.usuario.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._usuarioTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._autorTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.autor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._autorTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -6803,14 +7014,6 @@ Namespace dbRincondeLecturaDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._libroTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._usuarioTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.usuario.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._usuarioTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -6856,14 +7059,6 @@ Namespace dbRincondeLecturaDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._usuarioTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.usuario.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._usuarioTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._libroTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.libro.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -6888,19 +7083,27 @@ Namespace dbRincondeLecturaDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._clienteTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.cliente.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._clienteTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._autorTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.autor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._autorTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._usuarioTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.usuario.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._usuarioTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._clienteTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.cliente.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._clienteTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

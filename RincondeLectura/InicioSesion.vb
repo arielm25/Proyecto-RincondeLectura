@@ -2,15 +2,6 @@
 Public Class InicioSesion
     Private Sub BIngresar_Click(sender As Object, e As EventArgs) Handles BIngresar.Click
         If (TBUsuario.Text = "vendedor" And TBContraseña.Text = "vendedor") Then
-<<<<<<< HEAD
-            MDIParent1.Show()
-            Hide()
-        ElseIf (TBUsuario.Text = "gerente" And TBContraseña.Text = "gerente") Then
-            MDIParent2.Show()
-            Hide()
-        ElseIf (TBUsuario.Text = "admin" And TBContraseña.Text = "admin") Then
-            Administrador.Show()
-=======
             vendedor.Show()
             Hide()
         ElseIf (TBUsuario.Text = "gerente" And TBContraseña.Text = "gerente") Then
@@ -18,7 +9,13 @@ Public Class InicioSesion
             Hide()
         ElseIf (TBUsuario.Text = "admin" And TBContraseña.Text = "admin") Then
             administrador.Show()
->>>>>>> Formularios de nuevo libro,genero y editorial
+            vendedor.Show()
+            Hide()
+        ElseIf (TBUsuario.Text = "gerente" And TBContraseña.Text = "gerente") Then
+            gerente.Show()
+            Hide()
+        ElseIf (TBUsuario.Text = "admin" And TBContraseña.Text = "admin") Then
+            administrador.Show()
             Hide()
         End If
     End Sub

@@ -77,43 +77,8 @@ Public Class vendedor
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub BLibros_Click(sender As Object, e As EventArgs) Handles BLibros.Click
-    End Sub
-
-    Private Sub BVentas_Click(sender As Object, e As EventArgs) Handles BVentas.Click
-    End Sub
-
-    Private Sub BClientes_Click(sender As Object, e As EventArgs) Handles BClientes.Click
-    End Sub
-
-    Private Sub BLLibros_Click(sender As Object, e As EventArgs) Handles BLLibros.Click
-        FListarLibros.Show()
-
-    End Sub
-
-    Private Sub BLAutores_Click(sender As Object, e As EventArgs) Handles BLAutores.Click
-        FListarAutores.Show()
-    End Sub
-
-    Private Sub BLEditorial_Click(sender As Object, e As EventArgs) Handles BLEditorial.Click
-        FListarEditoriales.Show()
-    End Sub
-
-    Private Sub BLVentas_Click(sender As Object, e As EventArgs) Handles BLVentas.Click
-        FListarVentas.Show()
-
-    End Sub
-
-    Private Sub BRVentas_Click(sender As Object, e As EventArgs) Handles BRVentas.Click
-
-    End Sub
-
-    Private Sub BLClientes_Click(sender As Object, e As EventArgs) Handles BLClientes.Click
-        ABMUsuario.Show()
+    Private Sub LClientes_Click(sender As Object, e As EventArgs) Handles LClientes.Click
+        ABMCliente.Show()
     End Sub
 
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
