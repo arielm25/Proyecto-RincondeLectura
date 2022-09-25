@@ -1,6 +1,7 @@
-﻿Imports System.Data.SqlClient
-Public Class ABMCliente
+﻿Imports System.Data.Sql
+Imports System.Data.SqlClient
 
+Public Class ABMCliente
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
         If (TxtDNI.Text = "") Or (TxtNyA.Text = "") Or (TxtTelefono.Text = "") Or (TxtDireccion.Text = "") Or (TxtMail.Text = "") Then
             MsgBox("Debe completar todos los campos", 0 + 0 + 64, "Alerta")
@@ -32,11 +33,65 @@ Public Class ABMCliente
 
     End Sub
 
-    Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
-
-    End Sub
-
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("lista_clientes", conexion)
+            da.Fill(dt)
+            DataGridView1.DataSource = dt
+            Dim col As New DataGridViewTextBoxColumn
+            cerrar()
+        Catch ex As Exception : MsgBox(ex.Message)
 
+        End Try
     End Sub
+    Sub consultaDinamica(ByVal dni As String, ByVal dgv As DataGridView)
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("Select * from Cliente where dnicli like '" & dni + "%" & "'", conexion)
+            dt = New DataTable
+            da.Fill(dt)
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub TBDni_TextChanged(sender As Object, e As EventArgs) Handles TBDni.TextChanged
+        consultaDinamica(TBDni.Text, DataGridView1)
+    End Sub
+
+    Public Function Modificar(dnicli As String, nomyape As String, telefono As String, direccion As String, mail As String) As Integer
+        Dim act As New SqlCommand("pb_modificar", conexion)
+        act.CommandType = CommandType.StoredProcedure
+        act.Parameters.AddWithValue("@dnicli", dnicli)
+        act.Parameters.AddWithValue("@nomyape", nomyape)
+        act.Parameters.AddWithValue("@telefono", telefono)
+        act.Parameters.AddWithValue("@direccion", direccion)
+        act.Parameters.AddWithValue("@mail", mail)
+        abrir()
+        Dim actu1 As String = act.ExecuteNonQuery
+        cerrar()
+        Return actu1
+    End Function
+
+    Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
+        Try
+            Modificar(TxtDNI.Text, TxtNyA.Text, TxtTelefono.Text, TxtDireccion.Text, TxtMail.Text)
+            MsgBox("Se modifico el usuario con código: " + TxtDNI.Text)
+
+            TxtNyA.Text = ""
+            TxtTelefono.Text = ""
+            TxtDireccion.Text = ""
+            TxtMail.Text = ""
+
+
+        Catch ex As Exception
+            MsgBox("404 Error al modificar ")
+        End Try
+    End Sub
+
 End Class
