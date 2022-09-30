@@ -99,6 +99,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABMAutores.Designer.vb">
+      <DependentUpon>ABMAutores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMAutores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMEditoriales.Designer.vb">
+      <DependentUpon>ABMEditoriales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMEditoriales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMGeneros.Designer.vb">
+      <DependentUpon>ABMGeneros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMGeneros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMLibros.Designer.vb">
+      <DependentUpon>ABMLibros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMLibros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="autor.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -116,6 +140,12 @@
     </Compile>
     <Compile Include="editorial.vb">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FBackup.Designer.vb">
+      <DependentUpon>FBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FBackup.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FLClientes.Designer.vb">
       <DependentUpon>FLClientes.vb</DependentUpon>
@@ -193,6 +223,12 @@
       <DependentUpon>ABMCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="ABMCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMUsuarios.Designer.vb">
+      <DependentUpon>ABMUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FVentas.Designer.vb">
@@ -279,6 +315,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ABMAutores.resx">
+      <DependentUpon>ABMAutores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMEditoriales.resx">
+      <DependentUpon>ABMEditoriales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMGeneros.resx">
+      <DependentUpon>ABMGeneros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMLibros.resx">
+      <DependentUpon>ABMLibros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMUsuarios.resx">
+      <DependentUpon>ABMUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBackup.resx">
+      <DependentUpon>FBackup.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FLClientes.resx">
       <DependentUpon>FLClientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +438,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\logopng.png" />
     <None Include="packages.config" />
     <None Include="Resources\logo.jpg" />
   </ItemGroup>

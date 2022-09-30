@@ -25,45 +25,36 @@ Partial Class administrador
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(administrador))
         Me.P = New System.Windows.Forms.Panel()
-        Me.PClientes = New System.Windows.Forms.Panel()
-        Me.BNEditorial = New System.Windows.Forms.Button()
-        Me.BClientes = New System.Windows.Forms.Button()
         Me.PVentas = New System.Windows.Forms.Panel()
         Me.BLVentas = New System.Windows.Forms.Button()
         Me.BVentas = New System.Windows.Forms.Button()
         Me.PEditorial = New System.Windows.Forms.Panel()
-        Me.BLEditorial = New System.Windows.Forms.Button()
-        Me.BModEditorial = New System.Windows.Forms.Button()
-        Me.BNuevaEditorial = New System.Windows.Forms.Button()
-        Me.BEditorial = New System.Windows.Forms.Button()
+        Me.BABMGeneros = New System.Windows.Forms.Button()
+        Me.BAMBEditoriales = New System.Windows.Forms.Button()
+        Me.BABMAutores = New System.Windows.Forms.Button()
+        Me.BABMLibros = New System.Windows.Forms.Button()
+        Me.BLibros = New System.Windows.Forms.Button()
         Me.PAutores = New System.Windows.Forms.Panel()
-        Me.BLAutores = New System.Windows.Forms.Button()
-        Me.BModAutor = New System.Windows.Forms.Button()
-        Me.BNuevoAutor = New System.Windows.Forms.Button()
-        Me.BAutores = New System.Windows.Forms.Button()
+        Me.BAMBClientes = New System.Windows.Forms.Button()
+        Me.BClientes = New System.Windows.Forms.Button()
         Me.BBackup = New System.Windows.Forms.Button()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.PUsuarios = New System.Windows.Forms.Panel()
-        Me.BLUsuarios = New System.Windows.Forms.Button()
-        Me.BModificarUsuario = New System.Windows.Forms.Button()
-        Me.BNuevoUsuario = New System.Windows.Forms.Button()
+        Me.BABMUsuarios = New System.Windows.Forms.Button()
         Me.BUsuarios = New System.Windows.Forms.Button()
         Me.PLogoVendedor = New System.Windows.Forms.Panel()
-        Me.LVendedor = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.P.SuspendLayout()
-        Me.PClientes.SuspendLayout()
         Me.PVentas.SuspendLayout()
         Me.PEditorial.SuspendLayout()
         Me.PAutores.SuspendLayout()
         Me.PUsuarios.SuspendLayout()
-        Me.PLogoVendedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'P
         '
         Me.P.AutoScroll = True
         Me.P.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.P.Controls.Add(Me.PClientes)
         Me.P.Controls.Add(Me.PVentas)
         Me.P.Controls.Add(Me.PEditorial)
         Me.P.Controls.Add(Me.PAutores)
@@ -74,57 +65,20 @@ Partial Class administrador
         Me.P.Controls.Add(Me.PLogoVendedor)
         Me.P.Dock = System.Windows.Forms.DockStyle.Left
         Me.P.Location = New System.Drawing.Point(0, 0)
+        Me.P.Margin = New System.Windows.Forms.Padding(4)
         Me.P.Name = "P"
-        Me.P.Size = New System.Drawing.Size(158, 536)
+        Me.P.Size = New System.Drawing.Size(189, 556)
         Me.P.TabIndex = 10
-        '
-        'PClientes
-        '
-        Me.PClientes.Controls.Add(Me.BNEditorial)
-        Me.PClientes.Controls.Add(Me.BClientes)
-        Me.PClientes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PClientes.Location = New System.Drawing.Point(0, 430)
-        Me.PClientes.Name = "PClientes"
-        Me.PClientes.Size = New System.Drawing.Size(141, 49)
-        Me.PClientes.TabIndex = 41
-        '
-        'BNEditorial
-        '
-        Me.BNEditorial.BackColor = System.Drawing.Color.White
-        Me.BNEditorial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BNEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BNEditorial.Location = New System.Drawing.Point(0, 23)
-        Me.BNEditorial.Name = "BNEditorial"
-        Me.BNEditorial.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BNEditorial.Size = New System.Drawing.Size(141, 26)
-        Me.BNEditorial.TabIndex = 34
-        Me.BNEditorial.Text = "Listas de Clientes"
-        Me.BNEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNEditorial.UseVisualStyleBackColor = False
-        '
-        'BClientes
-        '
-        Me.BClientes.BackColor = System.Drawing.Color.Silver
-        Me.BClientes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BClientes.FlatAppearance.BorderSize = 0
-        Me.BClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BClientes.Location = New System.Drawing.Point(0, 0)
-        Me.BClientes.Name = "BClientes"
-        Me.BClientes.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BClientes.Size = New System.Drawing.Size(141, 23)
-        Me.BClientes.TabIndex = 35
-        Me.BClientes.Text = "Clientes"
-        Me.BClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BClientes.UseVisualStyleBackColor = False
         '
         'PVentas
         '
         Me.PVentas.Controls.Add(Me.BLVentas)
         Me.PVentas.Controls.Add(Me.BVentas)
         Me.PVentas.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PVentas.Location = New System.Drawing.Point(0, 381)
+        Me.PVentas.Location = New System.Drawing.Point(0, 384)
+        Me.PVentas.Margin = New System.Windows.Forms.Padding(4)
         Me.PVentas.Name = "PVentas"
-        Me.PVentas.Size = New System.Drawing.Size(141, 49)
+        Me.PVentas.Size = New System.Drawing.Size(189, 60)
         Me.PVentas.TabIndex = 40
         '
         'BLVentas
@@ -132,10 +86,11 @@ Partial Class administrador
         Me.BLVentas.BackColor = System.Drawing.Color.White
         Me.BLVentas.Dock = System.Windows.Forms.DockStyle.Top
         Me.BLVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLVentas.Location = New System.Drawing.Point(0, 25)
+        Me.BLVentas.Location = New System.Drawing.Point(0, 31)
+        Me.BLVentas.Margin = New System.Windows.Forms.Padding(4)
         Me.BLVentas.Name = "BLVentas"
-        Me.BLVentas.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLVentas.Size = New System.Drawing.Size(141, 24)
+        Me.BLVentas.Padding = New System.Windows.Forms.Padding(47, 0, 0, 0)
+        Me.BLVentas.Size = New System.Drawing.Size(189, 30)
         Me.BLVentas.TabIndex = 34
         Me.BLVentas.Text = "Lista de Ventas"
         Me.BLVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -147,10 +102,12 @@ Partial Class administrador
         Me.BVentas.Dock = System.Windows.Forms.DockStyle.Top
         Me.BVentas.FlatAppearance.BorderSize = 0
         Me.BVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BVentas.Location = New System.Drawing.Point(0, 0)
+        Me.BVentas.Margin = New System.Windows.Forms.Padding(4)
         Me.BVentas.Name = "BVentas"
-        Me.BVentas.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BVentas.Size = New System.Drawing.Size(141, 25)
+        Me.BVentas.Padding = New System.Windows.Forms.Padding(13, 0, 0, 0)
+        Me.BVentas.Size = New System.Drawing.Size(189, 31)
         Me.BVentas.TabIndex = 35
         Me.BVentas.Text = "Ventas"
         Me.BVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -158,141 +115,137 @@ Partial Class administrador
         '
         'PEditorial
         '
-        Me.PEditorial.Controls.Add(Me.BLEditorial)
-        Me.PEditorial.Controls.Add(Me.BModEditorial)
-        Me.PEditorial.Controls.Add(Me.BNuevaEditorial)
-        Me.PEditorial.Controls.Add(Me.BEditorial)
+        Me.PEditorial.Controls.Add(Me.BABMGeneros)
+        Me.PEditorial.Controls.Add(Me.BAMBEditoriales)
+        Me.PEditorial.Controls.Add(Me.BABMAutores)
+        Me.PEditorial.Controls.Add(Me.BABMLibros)
+        Me.PEditorial.Controls.Add(Me.BLibros)
         Me.PEditorial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PEditorial.Location = New System.Drawing.Point(0, 287)
+        Me.PEditorial.Location = New System.Drawing.Point(0, 238)
+        Me.PEditorial.Margin = New System.Windows.Forms.Padding(4)
         Me.PEditorial.Name = "PEditorial"
-        Me.PEditorial.Size = New System.Drawing.Size(141, 94)
+        Me.PEditorial.Size = New System.Drawing.Size(189, 146)
         Me.PEditorial.TabIndex = 39
         '
-        'BLEditorial
+        'BABMGeneros
         '
-        Me.BLEditorial.BackColor = System.Drawing.Color.White
-        Me.BLEditorial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLEditorial.Location = New System.Drawing.Point(0, 69)
-        Me.BLEditorial.Name = "BLEditorial"
-        Me.BLEditorial.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLEditorial.Size = New System.Drawing.Size(141, 25)
-        Me.BLEditorial.TabIndex = 37
-        Me.BLEditorial.Text = "Listas de Editorial"
-        Me.BLEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLEditorial.UseVisualStyleBackColor = False
+        Me.BABMGeneros.BackColor = System.Drawing.Color.White
+        Me.BABMGeneros.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BABMGeneros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BABMGeneros.Location = New System.Drawing.Point(0, 114)
+        Me.BABMGeneros.Margin = New System.Windows.Forms.Padding(4)
+        Me.BABMGeneros.Name = "BABMGeneros"
+        Me.BABMGeneros.Padding = New System.Windows.Forms.Padding(47, 0, 0, 0)
+        Me.BABMGeneros.Size = New System.Drawing.Size(189, 31)
+        Me.BABMGeneros.TabIndex = 39
+        Me.BABMGeneros.Text = "ABM Generos"
+        Me.BABMGeneros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BABMGeneros.UseVisualStyleBackColor = False
         '
-        'BModEditorial
+        'BAMBEditoriales
         '
-        Me.BModEditorial.BackColor = System.Drawing.Color.White
-        Me.BModEditorial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BModEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BModEditorial.Location = New System.Drawing.Point(0, 46)
-        Me.BModEditorial.Name = "BModEditorial"
-        Me.BModEditorial.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BModEditorial.Size = New System.Drawing.Size(141, 23)
-        Me.BModEditorial.TabIndex = 36
-        Me.BModEditorial.Text = "Modificar Editorial"
-        Me.BModEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BModEditorial.UseVisualStyleBackColor = False
+        Me.BAMBEditoriales.BackColor = System.Drawing.Color.White
+        Me.BAMBEditoriales.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BAMBEditoriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BAMBEditoriales.Location = New System.Drawing.Point(0, 84)
+        Me.BAMBEditoriales.Margin = New System.Windows.Forms.Padding(4)
+        Me.BAMBEditoriales.Name = "BAMBEditoriales"
+        Me.BAMBEditoriales.Padding = New System.Windows.Forms.Padding(47, 0, 0, 0)
+        Me.BAMBEditoriales.Size = New System.Drawing.Size(189, 30)
+        Me.BAMBEditoriales.TabIndex = 38
+        Me.BAMBEditoriales.Text = "ABM Editoriales"
+        Me.BAMBEditoriales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BAMBEditoriales.UseVisualStyleBackColor = False
         '
-        'BNuevaEditorial
+        'BABMAutores
         '
-        Me.BNuevaEditorial.BackColor = System.Drawing.Color.White
-        Me.BNuevaEditorial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BNuevaEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BNuevaEditorial.Location = New System.Drawing.Point(0, 23)
-        Me.BNuevaEditorial.Name = "BNuevaEditorial"
-        Me.BNuevaEditorial.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BNuevaEditorial.Size = New System.Drawing.Size(141, 23)
-        Me.BNuevaEditorial.TabIndex = 34
-        Me.BNuevaEditorial.Text = "Nueva Editorial"
-        Me.BNuevaEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevaEditorial.UseVisualStyleBackColor = False
+        Me.BABMAutores.BackColor = System.Drawing.Color.White
+        Me.BABMAutores.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BABMAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BABMAutores.Location = New System.Drawing.Point(0, 56)
+        Me.BABMAutores.Margin = New System.Windows.Forms.Padding(4)
+        Me.BABMAutores.Name = "BABMAutores"
+        Me.BABMAutores.Padding = New System.Windows.Forms.Padding(47, 0, 0, 0)
+        Me.BABMAutores.Size = New System.Drawing.Size(189, 28)
+        Me.BABMAutores.TabIndex = 37
+        Me.BABMAutores.Text = "ABM Autores"
+        Me.BABMAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BABMAutores.UseVisualStyleBackColor = False
         '
-        'BEditorial
+        'BABMLibros
         '
-        Me.BEditorial.BackColor = System.Drawing.Color.Silver
-        Me.BEditorial.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BEditorial.FlatAppearance.BorderSize = 0
-        Me.BEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BEditorial.Location = New System.Drawing.Point(0, 0)
-        Me.BEditorial.Name = "BEditorial"
-        Me.BEditorial.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BEditorial.Size = New System.Drawing.Size(141, 23)
-        Me.BEditorial.TabIndex = 35
-        Me.BEditorial.Text = "Editoriales"
-        Me.BEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BEditorial.UseVisualStyleBackColor = False
+        Me.BABMLibros.BackColor = System.Drawing.Color.White
+        Me.BABMLibros.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BABMLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BABMLibros.Location = New System.Drawing.Point(0, 28)
+        Me.BABMLibros.Margin = New System.Windows.Forms.Padding(4)
+        Me.BABMLibros.Name = "BABMLibros"
+        Me.BABMLibros.Padding = New System.Windows.Forms.Padding(47, 0, 0, 0)
+        Me.BABMLibros.Size = New System.Drawing.Size(189, 28)
+        Me.BABMLibros.TabIndex = 34
+        Me.BABMLibros.Text = "ABM Libros"
+        Me.BABMLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BABMLibros.UseVisualStyleBackColor = False
+        '
+        'BLibros
+        '
+        Me.BLibros.BackColor = System.Drawing.Color.Silver
+        Me.BLibros.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BLibros.FlatAppearance.BorderSize = 0
+        Me.BLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BLibros.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BLibros.Location = New System.Drawing.Point(0, 0)
+        Me.BLibros.Margin = New System.Windows.Forms.Padding(4)
+        Me.BLibros.Name = "BLibros"
+        Me.BLibros.Padding = New System.Windows.Forms.Padding(13, 0, 0, 0)
+        Me.BLibros.Size = New System.Drawing.Size(189, 28)
+        Me.BLibros.TabIndex = 35
+        Me.BLibros.Text = "Libros"
+        Me.BLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BLibros.UseVisualStyleBackColor = False
         '
         'PAutores
         '
-        Me.PAutores.Controls.Add(Me.BLAutores)
-        Me.PAutores.Controls.Add(Me.BModAutor)
-        Me.PAutores.Controls.Add(Me.BNuevoAutor)
-        Me.PAutores.Controls.Add(Me.BAutores)
+        Me.PAutores.Controls.Add(Me.BAMBClientes)
+        Me.PAutores.Controls.Add(Me.BClientes)
         Me.PAutores.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PAutores.Location = New System.Drawing.Point(0, 195)
+        Me.PAutores.Location = New System.Drawing.Point(0, 181)
+        Me.PAutores.Margin = New System.Windows.Forms.Padding(4)
         Me.PAutores.Name = "PAutores"
-        Me.PAutores.Size = New System.Drawing.Size(141, 92)
+        Me.PAutores.Size = New System.Drawing.Size(189, 57)
         Me.PAutores.TabIndex = 38
         '
-        'BLAutores
+        'BAMBClientes
         '
-        Me.BLAutores.BackColor = System.Drawing.Color.White
-        Me.BLAutores.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLAutores.Location = New System.Drawing.Point(0, 69)
-        Me.BLAutores.Name = "BLAutores"
-        Me.BLAutores.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLAutores.Size = New System.Drawing.Size(141, 23)
-        Me.BLAutores.TabIndex = 37
-        Me.BLAutores.Text = "Listas de Autores"
-        Me.BLAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLAutores.UseVisualStyleBackColor = False
+        Me.BAMBClientes.BackColor = System.Drawing.Color.White
+        Me.BAMBClientes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BAMBClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BAMBClientes.Location = New System.Drawing.Point(0, 28)
+        Me.BAMBClientes.Margin = New System.Windows.Forms.Padding(4)
+        Me.BAMBClientes.Name = "BAMBClientes"
+        Me.BAMBClientes.Padding = New System.Windows.Forms.Padding(47, 0, 0, 0)
+        Me.BAMBClientes.Size = New System.Drawing.Size(189, 28)
+        Me.BAMBClientes.TabIndex = 36
+        Me.BAMBClientes.Text = "ABM Clientes"
+        Me.BAMBClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BAMBClientes.UseVisualStyleBackColor = False
         '
-        'BModAutor
+        'BClientes
         '
-        Me.BModAutor.BackColor = System.Drawing.Color.White
-        Me.BModAutor.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BModAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BModAutor.Location = New System.Drawing.Point(0, 46)
-        Me.BModAutor.Name = "BModAutor"
-        Me.BModAutor.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BModAutor.Size = New System.Drawing.Size(141, 23)
-        Me.BModAutor.TabIndex = 36
-        Me.BModAutor.Text = "Modificar Autor"
-        Me.BModAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BModAutor.UseVisualStyleBackColor = False
-        '
-        'BNuevoAutor
-        '
-        Me.BNuevoAutor.BackColor = System.Drawing.Color.White
-        Me.BNuevoAutor.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BNuevoAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BNuevoAutor.Location = New System.Drawing.Point(0, 23)
-        Me.BNuevoAutor.Name = "BNuevoAutor"
-        Me.BNuevoAutor.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BNuevoAutor.Size = New System.Drawing.Size(141, 23)
-        Me.BNuevoAutor.TabIndex = 34
-        Me.BNuevoAutor.Text = "Nuevo Autor"
-        Me.BNuevoAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevoAutor.UseVisualStyleBackColor = False
-        '
-        'BAutores
-        '
-        Me.BAutores.BackColor = System.Drawing.Color.Silver
-        Me.BAutores.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BAutores.FlatAppearance.BorderSize = 0
-        Me.BAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BAutores.Location = New System.Drawing.Point(0, 0)
-        Me.BAutores.Name = "BAutores"
-        Me.BAutores.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BAutores.Size = New System.Drawing.Size(141, 23)
-        Me.BAutores.TabIndex = 35
-        Me.BAutores.Text = "Autores"
-        Me.BAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAutores.UseVisualStyleBackColor = False
+        Me.BClientes.BackColor = System.Drawing.Color.Silver
+        Me.BClientes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BClientes.FlatAppearance.BorderSize = 0
+        Me.BClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BClientes.Location = New System.Drawing.Point(0, 0)
+        Me.BClientes.Margin = New System.Windows.Forms.Padding(4)
+        Me.BClientes.Name = "BClientes"
+        Me.BClientes.Padding = New System.Windows.Forms.Padding(13, 0, 0, 0)
+        Me.BClientes.Size = New System.Drawing.Size(189, 28)
+        Me.BClientes.TabIndex = 35
+        Me.BClientes.Text = "Clientes"
+        Me.BClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BClientes.UseVisualStyleBackColor = False
         '
         'BBackup
         '
@@ -301,10 +254,12 @@ Partial Class administrador
         Me.BBackup.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BBackup.FlatAppearance.BorderSize = 0
         Me.BBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BBackup.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BBackup.ForeColor = System.Drawing.SystemColors.Control
-        Me.BBackup.Location = New System.Drawing.Point(0, 479)
+        Me.BBackup.Location = New System.Drawing.Point(0, 483)
+        Me.BBackup.Margin = New System.Windows.Forms.Padding(4)
         Me.BBackup.Name = "BBackup"
-        Me.BBackup.Size = New System.Drawing.Size(141, 26)
+        Me.BBackup.Size = New System.Drawing.Size(189, 32)
         Me.BBackup.TabIndex = 37
         Me.BBackup.Text = "  Backup"
         Me.BBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -317,11 +272,13 @@ Partial Class administrador
         Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BCerrarSesion.FlatAppearance.BorderSize = 0
         Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.Control
-        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 505)
+        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 515)
+        Me.BCerrarSesion.Margin = New System.Windows.Forms.Padding(4)
         Me.BCerrarSesion.Name = "BCerrarSesion"
-        Me.BCerrarSesion.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BCerrarSesion.Size = New System.Drawing.Size(141, 33)
+        Me.BCerrarSesion.Padding = New System.Windows.Forms.Padding(13, 0, 0, 0)
+        Me.BCerrarSesion.Size = New System.Drawing.Size(189, 41)
         Me.BCerrarSesion.TabIndex = 36
         Me.BCerrarSesion.Text = "Cerrar Sesion"
         Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -330,53 +287,27 @@ Partial Class administrador
         'PUsuarios
         '
         Me.PUsuarios.BackColor = System.Drawing.Color.White
-        Me.PUsuarios.Controls.Add(Me.BLUsuarios)
-        Me.PUsuarios.Controls.Add(Me.BModificarUsuario)
-        Me.PUsuarios.Controls.Add(Me.BNuevoUsuario)
+        Me.PUsuarios.Controls.Add(Me.BABMUsuarios)
         Me.PUsuarios.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PUsuarios.Location = New System.Drawing.Point(0, 120)
+        Me.PUsuarios.Location = New System.Drawing.Point(0, 147)
+        Me.PUsuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.PUsuarios.Name = "PUsuarios"
-        Me.PUsuarios.Size = New System.Drawing.Size(141, 75)
+        Me.PUsuarios.Size = New System.Drawing.Size(189, 34)
         Me.PUsuarios.TabIndex = 11
         '
-        'BLUsuarios
+        'BABMUsuarios
         '
-        Me.BLUsuarios.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BLUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BLUsuarios.Location = New System.Drawing.Point(0, 50)
-        Me.BLUsuarios.Name = "BLUsuarios"
-        Me.BLUsuarios.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BLUsuarios.Size = New System.Drawing.Size(141, 24)
-        Me.BLUsuarios.TabIndex = 2
-        Me.BLUsuarios.Text = "Listas de Usuarios"
-        Me.BLUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLUsuarios.UseVisualStyleBackColor = True
-        '
-        'BModificarUsuario
-        '
-        Me.BModificarUsuario.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BModificarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BModificarUsuario.Location = New System.Drawing.Point(0, 27)
-        Me.BModificarUsuario.Name = "BModificarUsuario"
-        Me.BModificarUsuario.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BModificarUsuario.Size = New System.Drawing.Size(141, 23)
-        Me.BModificarUsuario.TabIndex = 1
-        Me.BModificarUsuario.Text = "Modificar Usuario"
-        Me.BModificarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BModificarUsuario.UseVisualStyleBackColor = True
-        '
-        'BNuevoUsuario
-        '
-        Me.BNuevoUsuario.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BNuevoUsuario.Location = New System.Drawing.Point(0, 0)
-        Me.BNuevoUsuario.Name = "BNuevoUsuario"
-        Me.BNuevoUsuario.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.BNuevoUsuario.Size = New System.Drawing.Size(141, 27)
-        Me.BNuevoUsuario.TabIndex = 0
-        Me.BNuevoUsuario.Text = "Nuevo Usuario"
-        Me.BNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevoUsuario.UseVisualStyleBackColor = True
+        Me.BABMUsuarios.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BABMUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BABMUsuarios.Location = New System.Drawing.Point(0, 0)
+        Me.BABMUsuarios.Margin = New System.Windows.Forms.Padding(4)
+        Me.BABMUsuarios.Name = "BABMUsuarios"
+        Me.BABMUsuarios.Padding = New System.Windows.Forms.Padding(47, 0, 0, 0)
+        Me.BABMUsuarios.Size = New System.Drawing.Size(189, 33)
+        Me.BABMUsuarios.TabIndex = 0
+        Me.BABMUsuarios.Text = "ABM Usuarios"
+        Me.BABMUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BABMUsuarios.UseVisualStyleBackColor = True
         '
         'BUsuarios
         '
@@ -384,10 +315,12 @@ Partial Class administrador
         Me.BUsuarios.Dock = System.Windows.Forms.DockStyle.Top
         Me.BUsuarios.FlatAppearance.BorderSize = 0
         Me.BUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BUsuarios.Location = New System.Drawing.Point(0, 92)
+        Me.BUsuarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BUsuarios.Location = New System.Drawing.Point(0, 113)
+        Me.BUsuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.BUsuarios.Name = "BUsuarios"
-        Me.BUsuarios.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.BUsuarios.Size = New System.Drawing.Size(141, 28)
+        Me.BUsuarios.Padding = New System.Windows.Forms.Padding(13, 0, 0, 0)
+        Me.BUsuarios.Size = New System.Drawing.Size(189, 34)
         Me.BUsuarios.TabIndex = 9
         Me.BUsuarios.Text = "Usuarios"
         Me.BUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -395,68 +328,65 @@ Partial Class administrador
         '
         'PLogoVendedor
         '
-        Me.PLogoVendedor.Controls.Add(Me.LVendedor)
         Me.PLogoVendedor.Dock = System.Windows.Forms.DockStyle.Top
         Me.PLogoVendedor.Location = New System.Drawing.Point(0, 0)
+        Me.PLogoVendedor.Margin = New System.Windows.Forms.Padding(4)
         Me.PLogoVendedor.Name = "PLogoVendedor"
-        Me.PLogoVendedor.Size = New System.Drawing.Size(141, 92)
+        Me.PLogoVendedor.Size = New System.Drawing.Size(189, 113)
         Me.PLogoVendedor.TabIndex = 8
         '
-        'LVendedor
+        'Panel1
         '
-        Me.LVendedor.AutoSize = True
-        Me.LVendedor.ForeColor = System.Drawing.SystemColors.Control
-        Me.LVendedor.Location = New System.Drawing.Point(43, 51)
-        Me.LVendedor.Name = "LVendedor"
-        Me.LVendedor.Size = New System.Drawing.Size(57, 13)
-        Me.LVendedor.TabIndex = 0
-        Me.LVendedor.Text = "Mi Usuario"
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(189, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(919, 556)
+        Me.Panel1.TabIndex = 13
         '
         'administrador
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(883, 536)
+        Me.ClientSize = New System.Drawing.Size(1108, 556)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.P)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximumSize = New System.Drawing.Size(1126, 603)
+        Me.MinimumSize = New System.Drawing.Size(1126, 603)
         Me.Name = "administrador"
-        Me.Text = "MDIParent4"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Administrador"
         Me.P.ResumeLayout(False)
-        Me.PClientes.ResumeLayout(False)
         Me.PVentas.ResumeLayout(False)
         Me.PEditorial.ResumeLayout(False)
         Me.PAutores.ResumeLayout(False)
         Me.PUsuarios.ResumeLayout(False)
-        Me.PLogoVendedor.ResumeLayout(False)
-        Me.PLogoVendedor.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents P As Panel
-    Friend WithEvents PClientes As Panel
-    Friend WithEvents BNEditorial As Button
-    Friend WithEvents BClientes As Button
     Friend WithEvents PVentas As Panel
     Friend WithEvents BLVentas As Button
     Friend WithEvents BVentas As Button
     Friend WithEvents PEditorial As Panel
-    Friend WithEvents BLEditorial As Button
-    Friend WithEvents BModEditorial As Button
-    Friend WithEvents BNuevaEditorial As Button
-    Friend WithEvents BEditorial As Button
+    Friend WithEvents BABMLibros As Button
+    Friend WithEvents BLibros As Button
     Friend WithEvents PAutores As Panel
-    Friend WithEvents BLAutores As Button
-    Friend WithEvents BModAutor As Button
-    Friend WithEvents BNuevoAutor As Button
-    Friend WithEvents BAutores As Button
+    Friend WithEvents BClientes As Button
     Friend WithEvents BCerrarSesion As Button
-    Friend WithEvents PUsuarios As Panel
-    Friend WithEvents BLUsuarios As Button
-    Friend WithEvents BModificarUsuario As Button
-    Friend WithEvents BNuevoUsuario As Button
     Friend WithEvents BUsuarios As Button
     Friend WithEvents PLogoVendedor As Panel
-    Friend WithEvents LVendedor As Label
     Friend WithEvents BBackup As Button
+    Friend WithEvents PUsuarios As Panel
+    Friend WithEvents BABMUsuarios As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents BAMBClientes As Button
+    Friend WithEvents BABMAutores As Button
+    Friend WithEvents BABMGeneros As Button
+    Friend WithEvents BAMBEditoriales As Button
 End Class

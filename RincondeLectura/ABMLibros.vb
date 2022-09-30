@@ -1,6 +1,5 @@
-﻿Public Class FListarAutores
+﻿Public Class ABMLibros
     Private Sub BSalir_Click(sender As Object, e As EventArgs) Handles BSalir.Click
         Me.Close()
     End Sub
-
 End Class

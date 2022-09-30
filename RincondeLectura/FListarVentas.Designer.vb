@@ -22,8 +22,9 @@ Partial Class FListarVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BCancelar = New System.Windows.Forms.Button()
+        Me.BSalir = New System.Windows.Forms.Button()
         Me.GBFiltroV = New System.Windows.Forms.GroupBox()
         Me.CBTodos = New System.Windows.Forms.CheckBox()
         Me.BBuscar = New System.Windows.Forms.Button()
@@ -39,12 +40,6 @@ Partial Class FListarVentas
         Me.GBVendedor = New System.Windows.Forms.GroupBox()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.id_venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cod_libro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GBFiltroL = New System.Windows.Forms.GroupBox()
         Me.GBGenero = New System.Windows.Forms.GroupBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
@@ -54,6 +49,12 @@ Partial Class FListarVentas
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.GBAutores = New System.Windows.Forms.GroupBox()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.id_venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cod_libro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GBFiltroV.SuspendLayout()
         Me.GBCliente.SuspendLayout()
@@ -71,25 +72,33 @@ Partial Class FListarVentas
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel1.Controls.Add(Me.BCancelar)
+        Me.Panel1.Controls.Add(Me.BSalir)
         Me.Panel1.Controls.Add(Me.GBFiltroV)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.GBFiltroL)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(746, 450)
+        Me.Panel1.Size = New System.Drawing.Size(688, 457)
         Me.Panel1.TabIndex = 0
         '
-        'BCancelar
+        'BSalir
         '
-        Me.BCancelar.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.BCancelar.Location = New System.Drawing.Point(319, 405)
-        Me.BCancelar.Name = "BCancelar"
-        Me.BCancelar.Size = New System.Drawing.Size(117, 27)
-        Me.BCancelar.TabIndex = 10
-        Me.BCancelar.Text = "Cancelar"
-        Me.BCancelar.UseVisualStyleBackColor = False
+        Me.BSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BSalir.BackColor = System.Drawing.Color.Black
+        Me.BSalir.Font = New System.Drawing.Font("Doppio One", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BSalir.ForeColor = System.Drawing.Color.White
+        Me.BSalir.ImageAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.BSalir.Location = New System.Drawing.Point(13, 13)
+        Me.BSalir.Name = "BSalir"
+        Me.BSalir.Padding = New System.Windows.Forms.Padding(6, 0, 0, 0)
+        Me.BSalir.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BSalir.Size = New System.Drawing.Size(25, 26)
+        Me.BSalir.TabIndex = 66
+        Me.BSalir.Text = "X"
+        Me.BSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BSalir.UseVisualStyleBackColor = False
         '
         'GBFiltroV
         '
@@ -101,9 +110,9 @@ Partial Class FListarVentas
         Me.GBFiltroV.Controls.Add(Me.GBCod)
         Me.GBFiltroV.Controls.Add(Me.GBVendedor)
         Me.GBFiltroV.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GBFiltroV.Location = New System.Drawing.Point(319, 32)
+        Me.GBFiltroV.Location = New System.Drawing.Point(290, 45)
         Me.GBFiltroV.Name = "GBFiltroV"
-        Me.GBFiltroV.Size = New System.Drawing.Size(422, 142)
+        Me.GBFiltroV.Size = New System.Drawing.Size(390, 142)
         Me.GBFiltroV.TabIndex = 9
         Me.GBFiltroV.TabStop = False
         Me.GBFiltroV.Text = "Filtrar Por Venta"
@@ -111,7 +120,7 @@ Partial Class FListarVentas
         'CBTodos
         '
         Me.CBTodos.AutoSize = True
-        Me.CBTodos.Location = New System.Drawing.Point(17, 21)
+        Me.CBTodos.Location = New System.Drawing.Point(10, 21)
         Me.CBTodos.Name = "CBTodos"
         Me.CBTodos.Size = New System.Drawing.Size(108, 17)
         Me.CBTodos.TabIndex = 14
@@ -121,9 +130,9 @@ Partial Class FListarVentas
         'BBuscar
         '
         Me.BBuscar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BBuscar.Location = New System.Drawing.Point(16, 101)
+        Me.BBuscar.Location = New System.Drawing.Point(6, 101)
         Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(117, 27)
+        Me.BBuscar.Size = New System.Drawing.Size(126, 27)
         Me.BBuscar.TabIndex = 18
         Me.BBuscar.Text = "Buscar"
         Me.BBuscar.UseVisualStyleBackColor = False
@@ -132,9 +141,9 @@ Partial Class FListarVentas
         '
         Me.GBCliente.Controls.Add(Me.TextBox2)
         Me.GBCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GBCliente.Location = New System.Drawing.Point(273, 18)
+        Me.GBCliente.Location = New System.Drawing.Point(255, 14)
         Me.GBCliente.Name = "GBCliente"
-        Me.GBCliente.Size = New System.Drawing.Size(139, 52)
+        Me.GBCliente.Size = New System.Drawing.Size(126, 52)
         Me.GBCliente.TabIndex = 17
         Me.GBCliente.TabStop = False
         Me.GBCliente.Text = "Cliente"
@@ -143,7 +152,7 @@ Partial Class FListarVentas
         '
         Me.TextBox2.Location = New System.Drawing.Point(6, 19)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(115, 20)
         Me.TextBox2.TabIndex = 0
         '
         'GBFecha
@@ -153,9 +162,9 @@ Partial Class FListarVentas
         Me.GBFecha.Controls.Add(Me.DTPHasta)
         Me.GBFecha.Controls.Add(Me.DTPDesde)
         Me.GBFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GBFecha.Location = New System.Drawing.Point(151, 11)
+        Me.GBFecha.Location = New System.Drawing.Point(138, 13)
         Me.GBFecha.Name = "GBFecha"
-        Me.GBFecha.Size = New System.Drawing.Size(116, 115)
+        Me.GBFecha.Size = New System.Drawing.Size(111, 115)
         Me.GBFecha.TabIndex = 16
         Me.GBFecha.TabStop = False
         Me.GBFecha.Text = "Fecha"
@@ -198,9 +207,9 @@ Partial Class FListarVentas
         '
         Me.GBCod.Controls.Add(Me.TextBox1)
         Me.GBCod.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GBCod.Location = New System.Drawing.Point(273, 76)
+        Me.GBCod.Location = New System.Drawing.Point(255, 76)
         Me.GBCod.Name = "GBCod"
-        Me.GBCod.Size = New System.Drawing.Size(139, 52)
+        Me.GBCod.Size = New System.Drawing.Size(126, 52)
         Me.GBCod.TabIndex = 15
         Me.GBCod.TabStop = False
         Me.GBCod.Text = "Codigo Venta"
@@ -209,7 +218,7 @@ Partial Class FListarVentas
         '
         Me.TextBox1.Location = New System.Drawing.Point(6, 19)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(115, 20)
         Me.TextBox1.TabIndex = 0
         '
         'GBVendedor
@@ -218,7 +227,7 @@ Partial Class FListarVentas
         Me.GBVendedor.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.GBVendedor.Location = New System.Drawing.Point(6, 42)
         Me.GBVendedor.Name = "GBVendedor"
-        Me.GBVendedor.Size = New System.Drawing.Size(139, 52)
+        Me.GBVendedor.Size = New System.Drawing.Size(126, 52)
         Me.GBVendedor.TabIndex = 14
         Me.GBVendedor.TabStop = False
         Me.GBVendedor.Text = "Vendedores"
@@ -228,7 +237,7 @@ Partial Class FListarVentas
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox5.Size = New System.Drawing.Size(115, 21)
         Me.ComboBox5.TabIndex = 13
         '
         'DataGridView1
@@ -236,42 +245,21 @@ Partial Class FListarVentas
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_venta, Me.id_cliente, Me.cod_libro, Me.total, Me.fecha, Me.vendedor})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 190)
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 193)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(729, 202)
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.Size = New System.Drawing.Size(670, 253)
         Me.DataGridView1.TabIndex = 8
-        '
-        'id_venta
-        '
-        Me.id_venta.HeaderText = "id_venta"
-        Me.id_venta.Name = "id_venta"
-        '
-        'id_cliente
-        '
-        Me.id_cliente.HeaderText = "id_cliente"
-        Me.id_cliente.Name = "id_cliente"
-        '
-        'cod_libro
-        '
-        Me.cod_libro.HeaderText = "cod_libro"
-        Me.cod_libro.Name = "cod_libro"
-        '
-        'total
-        '
-        Me.total.HeaderText = "total"
-        Me.total.Name = "total"
-        '
-        'fecha
-        '
-        Me.fecha.HeaderText = "fecha"
-        Me.fecha.Name = "fecha"
-        '
-        'vendedor
-        '
-        Me.vendedor.HeaderText = "vendedor"
-        Me.vendedor.Name = "vendedor"
         '
         'GBFiltroL
         '
@@ -281,9 +269,9 @@ Partial Class FListarVentas
         Me.GBFiltroL.Controls.Add(Me.GBEditorial)
         Me.GBFiltroL.Controls.Add(Me.GBAutores)
         Me.GBFiltroL.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GBFiltroL.Location = New System.Drawing.Point(12, 32)
+        Me.GBFiltroL.Location = New System.Drawing.Point(10, 45)
         Me.GBFiltroL.Name = "GBFiltroL"
-        Me.GBFiltroL.Size = New System.Drawing.Size(301, 142)
+        Me.GBFiltroL.Size = New System.Drawing.Size(272, 142)
         Me.GBFiltroL.TabIndex = 7
         Me.GBFiltroL.TabStop = False
         Me.GBFiltroL.Text = "Filtrar Por Libro"
@@ -292,9 +280,9 @@ Partial Class FListarVentas
         '
         Me.GBGenero.Controls.Add(Me.ComboBox3)
         Me.GBGenero.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GBGenero.Location = New System.Drawing.Point(151, 19)
+        Me.GBGenero.Location = New System.Drawing.Point(138, 19)
         Me.GBGenero.Name = "GBGenero"
-        Me.GBGenero.Size = New System.Drawing.Size(139, 52)
+        Me.GBGenero.Size = New System.Drawing.Size(126, 52)
         Me.GBGenero.TabIndex = 14
         Me.GBGenero.TabStop = False
         Me.GBGenero.Text = "Genero"
@@ -302,18 +290,18 @@ Partial Class FListarVentas
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(6, 19)
+        Me.ComboBox3.Location = New System.Drawing.Point(5, 19)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox3.Size = New System.Drawing.Size(115, 21)
         Me.ComboBox3.TabIndex = 13
         '
         'GBAnioEdicion
         '
         Me.GBAnioEdicion.Controls.Add(Me.ComboBox1)
         Me.GBAnioEdicion.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GBAnioEdicion.Location = New System.Drawing.Point(151, 82)
+        Me.GBAnioEdicion.Location = New System.Drawing.Point(138, 82)
         Me.GBAnioEdicion.Name = "GBAnioEdicion"
-        Me.GBAnioEdicion.Size = New System.Drawing.Size(139, 52)
+        Me.GBAnioEdicion.Size = New System.Drawing.Size(126, 52)
         Me.GBAnioEdicion.TabIndex = 15
         Me.GBAnioEdicion.TabStop = False
         Me.GBAnioEdicion.Text = "Año de Edicion"
@@ -321,9 +309,9 @@ Partial Class FListarVentas
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 19)
+        Me.ComboBox1.Location = New System.Drawing.Point(5, 19)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(115, 21)
         Me.ComboBox1.TabIndex = 13
         '
         'GBEditorial
@@ -332,7 +320,7 @@ Partial Class FListarVentas
         Me.GBEditorial.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.GBEditorial.Location = New System.Drawing.Point(6, 82)
         Me.GBEditorial.Name = "GBEditorial"
-        Me.GBEditorial.Size = New System.Drawing.Size(139, 52)
+        Me.GBEditorial.Size = New System.Drawing.Size(126, 52)
         Me.GBEditorial.TabIndex = 14
         Me.GBEditorial.TabStop = False
         Me.GBEditorial.Text = "Editorial"
@@ -342,7 +330,7 @@ Partial Class FListarVentas
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(115, 21)
         Me.ComboBox2.TabIndex = 13
         '
         'GBAutores
@@ -351,7 +339,7 @@ Partial Class FListarVentas
         Me.GBAutores.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.GBAutores.Location = New System.Drawing.Point(6, 19)
         Me.GBAutores.Name = "GBAutores"
-        Me.GBAutores.Size = New System.Drawing.Size(139, 52)
+        Me.GBAutores.Size = New System.Drawing.Size(126, 52)
         Me.GBAutores.TabIndex = 13
         Me.GBAutores.TabStop = False
         Me.GBAutores.Text = "Autores"
@@ -361,16 +349,57 @@ Partial Class FListarVentas
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox4.Size = New System.Drawing.Size(115, 21)
         Me.ComboBox4.TabIndex = 13
+        '
+        'id_venta
+        '
+        Me.id_venta.HeaderText = "Id_venta"
+        Me.id_venta.MinimumWidth = 6
+        Me.id_venta.Name = "id_venta"
+        '
+        'id_cliente
+        '
+        Me.id_cliente.HeaderText = "Id_cliente"
+        Me.id_cliente.MinimumWidth = 6
+        Me.id_cliente.Name = "id_cliente"
+        '
+        'cod_libro
+        '
+        Me.cod_libro.HeaderText = "Cod_libro"
+        Me.cod_libro.MinimumWidth = 6
+        Me.cod_libro.Name = "cod_libro"
+        '
+        'total
+        '
+        Me.total.HeaderText = "Total"
+        Me.total.MinimumWidth = 6
+        Me.total.Name = "total"
+        '
+        'fecha
+        '
+        Me.fecha.HeaderText = "Fecha"
+        Me.fecha.MinimumWidth = 6
+        Me.fecha.Name = "fecha"
+        '
+        'vendedor
+        '
+        Me.vendedor.HeaderText = "Vendedor"
+        Me.vendedor.MinimumWidth = 6
+        Me.vendedor.Name = "vendedor"
         '
         'FListarVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(746, 450)
+        Me.ClientSize = New System.Drawing.Size(688, 457)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Location = New System.Drawing.Point(494, 196)
+        Me.MaximumSize = New System.Drawing.Size(688, 457)
+        Me.MinimumSize = New System.Drawing.Size(688, 457)
         Me.Name = "FListarVentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Lista Ventas"
         Me.Panel1.ResumeLayout(False)
         Me.GBFiltroV.ResumeLayout(False)
@@ -393,7 +422,6 @@ Partial Class FListarVentas
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents BCancelar As Button
     Friend WithEvents GBFiltroV As GroupBox
     Friend WithEvents CBTodos As CheckBox
     Friend WithEvents BBuscar As Button
@@ -409,12 +437,6 @@ Partial Class FListarVentas
     Friend WithEvents GBVendedor As GroupBox
     Friend WithEvents ComboBox5 As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents id_venta As DataGridViewTextBoxColumn
-    Friend WithEvents id_cliente As DataGridViewTextBoxColumn
-    Friend WithEvents cod_libro As DataGridViewTextBoxColumn
-    Friend WithEvents total As DataGridViewTextBoxColumn
-    Friend WithEvents fecha As DataGridViewTextBoxColumn
-    Friend WithEvents vendedor As DataGridViewTextBoxColumn
     Friend WithEvents GBFiltroL As GroupBox
     Friend WithEvents GBGenero As GroupBox
     Friend WithEvents ComboBox3 As ComboBox
@@ -424,4 +446,11 @@ Partial Class FListarVentas
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents GBAutores As GroupBox
     Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents BSalir As Button
+    Friend WithEvents id_venta As DataGridViewTextBoxColumn
+    Friend WithEvents id_cliente As DataGridViewTextBoxColumn
+    Friend WithEvents cod_libro As DataGridViewTextBoxColumn
+    Friend WithEvents total As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
+    Friend WithEvents vendedor As DataGridViewTextBoxColumn
 End Class

@@ -82,7 +82,34 @@ Public Class vendedor
     End Sub
 
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
-        InicioSesion.Show()
+        ABMCliente.Close()
+        FVentas.Close()
+        FListarVentas.Close()
+        FListarLibros.Close()
+        FListarAutores.Close()
+        FListarEditoriales.Close()
         Me.Close()
+        InicioSesion.Show()
+        InicioSesion.TBUsuario.Focus()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        FVentas.Show()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        FListarVentas.Show()
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        FListarLibros.Show()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        FListarAutores.Show()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        FListarEditoriales.Show()
     End Sub
 End Class

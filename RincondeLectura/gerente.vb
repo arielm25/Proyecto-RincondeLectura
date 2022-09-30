@@ -79,7 +79,39 @@ Public Class gerente
     Private m_ChildFormNumber As Integer
 
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
-        InicioSesion.Show()
+        FListarVentas.Close()
+        FLClientes.Close()
+        FListarLibros.Close()
+        FListarAutores.Close()
+        FListarEditoriales.Close()
+        FListarUsuarios.Close()
         Me.Close()
+        InicioSesion.Show()
+        InicioSesion.TBUsuario.Focus()
     End Sub
+
+    Private Sub BLVentas_Click(sender As Object, e As EventArgs) Handles BLVentas.Click
+        FListarVentas.Show()
+    End Sub
+
+    Private Sub BLClientes_Click(sender As Object, e As EventArgs) Handles BLClientes.Click
+        FLClientes.Show()
+    End Sub
+
+    Private Sub BLLibros_Click(sender As Object, e As EventArgs) Handles BLLibros.Click
+        FListarLibros.Show()
+    End Sub
+
+    Private Sub BLEditoriales_Click(sender As Object, e As EventArgs) Handles BLEditoriales.Click
+        FListarEditoriales.Show()
+    End Sub
+
+    Private Sub BLAutores_Click(sender As Object, e As EventArgs) Handles BLAutores.Click
+        FListarAutores.Show()
+    End Sub
+
+    Private Sub BLUsuarios_Click(sender As Object, e As EventArgs) Handles BLUsuarios.Click
+        FListarUsuarios.Show()
+    End Sub
+
 End Class

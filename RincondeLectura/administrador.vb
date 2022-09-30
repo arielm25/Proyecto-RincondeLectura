@@ -78,7 +78,48 @@ Public Class administrador
     Private m_ChildFormNumber As Integer
 
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
-        InicioSesion.Show()
+        ABMUsuarios.Close()
+        ABMCliente.Close()
+        ABMAutores.Close()
+        ABMLibros.Close()
+        ABMEditoriales.Close()
+        ABMGeneros.Close()
+        FListarVentas.Close()
+        FBackup.Close()
         Me.Close()
+        InicioSesion.Show()
+        InicioSesion.TBUsuario.Focus()
+    End Sub
+
+    Private Sub BABMUsuarios_Click(sender As Object, e As EventArgs) Handles BABMUsuarios.Click
+        ABMUsuarios.Show()
+    End Sub
+
+    Private Sub BAMBClientes_Click(sender As Object, e As EventArgs) Handles BAMBClientes.Click
+        ABMCliente.Show()
+    End Sub
+
+    Private Sub BABMAutores_Click(sender As Object, e As EventArgs) Handles BABMAutores.Click
+        ABMAutores.Show()
+    End Sub
+
+    Private Sub BABMLibros_Click(sender As Object, e As EventArgs) Handles BABMLibros.Click
+        ABMLibros.Show()
+    End Sub
+
+    Private Sub BAMBEditoriales_Click(sender As Object, e As EventArgs) Handles BAMBEditoriales.Click
+        ABMEditoriales.Show()
+    End Sub
+
+    Private Sub BABMGeneros_Click(sender As Object, e As EventArgs) Handles BABMGeneros.Click
+        ABMGeneros.Show()
+    End Sub
+
+    Private Sub BLVentas_Click(sender As Object, e As EventArgs) Handles BLVentas.Click
+        FListarVentas.Show()
+    End Sub
+
+    Private Sub BBackup_Click(sender As Object, e As EventArgs) Handles BBackup.Click
+        FBackup.Show()
     End Sub
 End Class

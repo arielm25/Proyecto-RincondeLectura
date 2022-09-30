@@ -22,6 +22,7 @@ Partial Class InicioSesion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InicioSesion))
         Me.BIngresar = New System.Windows.Forms.Button()
         Me.BSalir = New System.Windows.Forms.Button()
         Me.LUsuario = New System.Windows.Forms.Label()
@@ -34,8 +35,8 @@ Partial Class InicioSesion
         '
         'BIngresar
         '
-        Me.BIngresar.Location = New System.Drawing.Point(357, 363)
-        Me.BIngresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BIngresar.Location = New System.Drawing.Point(269, 359)
+        Me.BIngresar.Margin = New System.Windows.Forms.Padding(4)
         Me.BIngresar.Name = "BIngresar"
         Me.BIngresar.Size = New System.Drawing.Size(100, 28)
         Me.BIngresar.TabIndex = 0
@@ -44,8 +45,8 @@ Partial Class InicioSesion
         '
         'BSalir
         '
-        Me.BSalir.Location = New System.Drawing.Point(481, 363)
-        Me.BSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BSalir.Location = New System.Drawing.Point(395, 359)
+        Me.BSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.BSalir.Name = "BSalir"
         Me.BSalir.Size = New System.Drawing.Size(100, 28)
         Me.BSalir.TabIndex = 1
@@ -55,7 +56,7 @@ Partial Class InicioSesion
         'LUsuario
         '
         Me.LUsuario.AutoSize = True
-        Me.LUsuario.Location = New System.Drawing.Point(353, 263)
+        Me.LUsuario.Location = New System.Drawing.Point(268, 260)
         Me.LUsuario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LUsuario.Name = "LUsuario"
         Me.LUsuario.Size = New System.Drawing.Size(61, 17)
@@ -65,7 +66,7 @@ Partial Class InicioSesion
         'LContraseña
         '
         Me.LContraseña.AutoSize = True
-        Me.LContraseña.Location = New System.Drawing.Point(353, 304)
+        Me.LContraseña.Location = New System.Drawing.Point(268, 302)
         Me.LContraseña.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LContraseña.Name = "LContraseña"
         Me.LContraseña.Size = New System.Drawing.Size(85, 17)
@@ -74,25 +75,25 @@ Partial Class InicioSesion
         '
         'TBUsuario
         '
-        Me.TBUsuario.Location = New System.Drawing.Point(448, 260)
-        Me.TBUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBUsuario.Location = New System.Drawing.Point(363, 257)
+        Me.TBUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.TBUsuario.Name = "TBUsuario"
         Me.TBUsuario.Size = New System.Drawing.Size(132, 22)
         Me.TBUsuario.TabIndex = 4
         '
         'TBContraseña
         '
-        Me.TBContraseña.Location = New System.Drawing.Point(448, 300)
-        Me.TBContraseña.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBContraseña.Location = New System.Drawing.Point(363, 297)
+        Me.TBContraseña.Margin = New System.Windows.Forms.Padding(4)
         Me.TBContraseña.Name = "TBContraseña"
         Me.TBContraseña.Size = New System.Drawing.Size(132, 22)
         Me.TBContraseña.TabIndex = 5
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.RincondeLectura.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(257, 33)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Image = Global.RincondeLectura.My.Resources.Resources.logopng
+        Me.PictureBox1.Location = New System.Drawing.Point(181, 30)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(389, 197)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -103,7 +104,7 @@ Partial Class InicioSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(903, 554)
+        Me.ClientSize = New System.Drawing.Size(749, 406)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TBContraseña)
         Me.Controls.Add(Me.TBUsuario)
@@ -111,8 +112,12 @@ Partial Class InicioSesion
         Me.Controls.Add(Me.LUsuario)
         Me.Controls.Add(Me.BSalir)
         Me.Controls.Add(Me.BIngresar)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximumSize = New System.Drawing.Size(767, 453)
+        Me.MinimumSize = New System.Drawing.Size(767, 453)
         Me.Name = "InicioSesion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio de sesion"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
