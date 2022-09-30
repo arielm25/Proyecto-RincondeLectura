@@ -95,7 +95,7 @@ Public Class ABMCliente
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         Try
             Modificar(TxtDNI.Text, TxtNyA.Text, TxtTelefono.Text, TxtDireccion.Text, TxtMail.Text)
-            MsgBox("Se modifico el usuario con código: " + TxtDNI.Text)
+            MsgBox("Se modifico al cliente con DNI: " + TxtDNI.Text)
 
             TxtNyA.Text = ""
             TxtTelefono.Text = ""
