@@ -2,39 +2,50 @@
 Imports System.Data.SqlClient
 
 Public Class ABMCliente
+
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
-        If (TxtDNI.Text = "") Or (TxtNyA.Text = "") Or (TxtTelefono.Text = "") Or (TxtDireccion.Text = "") Or (TxtMail.Text = "") Then
-            MsgBox("Debe completar todos los campos", 0 + 0 + 64, "Alerta")
-        Else
-            Dim result As MsgBoxResult
-            result = MsgBox("¿Desea terminar y registrar el nuevo cliente?", 4 + 256 + 32, "Confirmación")
+        Using conexion As New SqlConnection("Data Source=DESKTOP-RE6RPNF\SQLEXPRESS01;Initial Catalog=dbRincondeLectura;Integrated Security=True")
+            Dim consultaSql As String = "SELECT COUNT(*) FROM cliente WHERE (dniCli=@dniCli)"
+            Dim comd As New SqlCommand(consultaSql, conexion)
+            comd.Parameters.AddWithValue("@dniCli", TxtDNI.Text)
+            conexion.Open()
+            Dim Existe As Boolean = Convert.ToInt32(comd.ExecuteScalar) > 0
 
-            If result = vbYes Then
-                Try
-                    Dim cmd As New SqlCommand
-                    abrir()
-                    cmd = New SqlCommand("pa_clientes_insertar", conexion)
-                    cmd.CommandType = 4
-                    cmd.Parameters.AddWithValue("@dnicli", TxtDNI.Text)
-                    cmd.Parameters.AddWithValue("@nomyape", TxtNyA.Text)
-                    cmd.Parameters.AddWithValue("@telefono", TxtTelefono.Text)
-                    cmd.Parameters.AddWithValue("@direccion", TxtDireccion.Text)
-                    cmd.Parameters.AddWithValue("@mail", TxtMail.Text)
-                    cmd.ExecuteNonQuery()
-                    MsgBox("Cliente registrado", MsgBoxStyle.OkOnly)
-                    cerrar()
-                    TxtDNI.Clear()
-                    TxtNyA.Clear()
-                    TxtDireccion.Clear()
-                    TxtTelefono.Clear()
-                    TxtMail.Clear()
-                Catch ex As Exception : MsgBox(ex.Message)
+            If (TxtDNI.Text = "") Or (TxtNyA.Text = "") Or (TxtTelefono.Text = "") Or (TxtDireccion.Text = "") Or (TxtMail.Text = "") Then
+                MsgBox("Debe completar todos los campos", 0 + 0 + 64, "Alerta")
+            Else
+                If Existe Then
+                    MsgBox("El dni ingresado ya existe", vbCritical, "Error")
+                Else
+                    Dim result As MsgBoxResult
+                    result = MsgBox("¿Desea terminar y registrar el nuevo cliente?", 4 + 256 + 32, "Confirmación")
+                    If result = vbYes Then
+                        Try
+                            Dim cmd As New SqlCommand
+                            abrir()
+                            cmd = New SqlCommand("pa_clientes_insertar", conexion)
+                            cmd.CommandType = 4
+                            cmd.Parameters.AddWithValue("@dnicli", TxtDNI.Text)
+                            cmd.Parameters.AddWithValue("@nomyape", TxtNyA.Text)
+                            cmd.Parameters.AddWithValue("@telefono", TxtTelefono.Text)
+                            cmd.Parameters.AddWithValue("@direccion", TxtDireccion.Text)
+                            cmd.Parameters.AddWithValue("@mail", TxtMail.Text)
+                            cmd.ExecuteNonQuery()
+                            MsgBox("Cliente registrado", MsgBoxStyle.OkOnly)
+                            cerrar()
+                            TxtDNI.Clear()
+                            TxtNyA.Clear()
+                            TxtDireccion.Clear()
+                            TxtTelefono.Clear()
+                            TxtMail.Clear()
+                        Catch ex As Exception : MsgBox(ex.Message)
 
-                End Try
+                        End Try
 
+                    End If
+                End If
             End If
-        End If
-
+        End Using
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
@@ -45,7 +56,6 @@ Public Class ABMCliente
             da = New SqlDataAdapter("lista_clientes", conexion)
             da.Fill(dt)
             DataGridView1.DataSource = dt
-            Dim col As New DataGridViewTextBoxColumn
             cerrar()
         Catch ex As Exception : MsgBox(ex.Message)
 
