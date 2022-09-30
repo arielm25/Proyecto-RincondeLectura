@@ -23,7 +23,11 @@ Public Class ABMCliente
                     cmd.ExecuteNonQuery()
                     MsgBox("Cliente registrado", MsgBoxStyle.OkOnly)
                     cerrar()
-
+                    TxtDNI.Clear()
+                    TxtNyA.Clear()
+                    TxtDireccion.Clear()
+                    TxtTelefono.Clear()
+                    TxtMail.Clear()
                 Catch ex As Exception : MsgBox(ex.Message)
 
                 End Try
@@ -96,5 +100,53 @@ Public Class ABMCliente
 
     Private Sub BSalir_Click(sender As Object, e As EventArgs) Handles BSalir.Click
         Me.Close()
+    End Sub
+
+    Private Sub TxtDNI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtDNI.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TBDni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TBDni.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelefono.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TxtNyA_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNyA.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class

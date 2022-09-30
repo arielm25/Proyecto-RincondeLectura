@@ -2,7 +2,8 @@
 
 Module ConexionMaestra
     Public conexion As New SqlConnection("Data Source=DESKTOP-RE6RPNF\SQLEXPRESS01;Initial Catalog=dbRincondeLectura;Integrated Security=True")
-
+    Public dr As SqlDataReader
+    Public cmd As SqlCommand
     Sub abrir()
         If conexion.State = 0 Then
             conexion.Open()
