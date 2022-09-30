@@ -83,10 +83,11 @@ Partial Class InicioSesion
         '
         'TBContraseña
         '
+        Me.TBContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBContraseña.Location = New System.Drawing.Point(363, 297)
         Me.TBContraseña.Margin = New System.Windows.Forms.Padding(4)
         Me.TBContraseña.Name = "TBContraseña"
-        Me.TBContraseña.Size = New System.Drawing.Size(132, 22)
+        Me.TBContraseña.Size = New System.Drawing.Size(132, 27)
         Me.TBContraseña.TabIndex = 5
         '
         'PictureBox1
