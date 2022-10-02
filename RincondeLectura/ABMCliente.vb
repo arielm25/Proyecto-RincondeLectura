@@ -47,7 +47,6 @@ Public Class ABMCliente
             End If
         End Using
     End Sub
-
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
         Dim dt As New DataTable
         Dim da As SqlDataAdapter
@@ -60,6 +59,7 @@ Public Class ABMCliente
         Catch ex As Exception : MsgBox(ex.Message)
 
         End Try
+        DataGridView1.Columns("Eliminar").DisplayIndex = 5
     End Sub
     Sub consultaDinamica(ByVal dni As String, ByVal dgv As DataGridView)
         Dim dt As New DataTable

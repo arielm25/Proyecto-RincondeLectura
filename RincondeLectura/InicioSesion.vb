@@ -11,7 +11,12 @@ Public Class InicioSesion
             administrador.Show()
             Hide()
         Else
-            MsgBox("Usuario o contraseña incorrectos", 0 + 0 + 64, "Atencion")
+            If (TBUsuario.Text = "") Or (TBContraseña.Text = "") Then
+                MsgBox("Debe completar todos los campos", 0 + 0 + 64, "Alerta")
+
+            Else
+                MsgBox("Usuario o contraseña incorrectos", 0 + 0 + 64, "Atencion")
+            End If
         End If
         TBUsuario.Text = ""
         TBContraseña.Text = ""

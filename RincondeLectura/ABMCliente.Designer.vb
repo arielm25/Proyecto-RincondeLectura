@@ -46,6 +46,7 @@ Partial Class ABMCliente
         Me.GBNyA = New System.Windows.Forms.GroupBox()
         Me.TxtNyA = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBFiltrar.SuspendLayout()
@@ -91,6 +92,7 @@ Partial Class ABMCliente
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
         Me.DataGridView1.Location = New System.Drawing.Point(32, 232)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -334,6 +336,11 @@ Partial Class ABMCliente
         Me.Panel2.Size = New System.Drawing.Size(688, 604)
         Me.Panel2.TabIndex = 1
         '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        '
         'ABMCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -390,4 +397,5 @@ Partial Class ABMCliente
     Friend WithEvents RBEliminados As RadioButton
     Friend WithEvents RBActivos As RadioButton
     Friend WithEvents BSalir As Button
+    Friend WithEvents Eliminar As DataGridViewTextBoxColumn
 End Class
