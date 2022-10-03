@@ -73,6 +73,7 @@ Public Class ABMCliente
         Catch ex As Exception
 
         End Try
+        DataGridView1.Columns("Eliminar").DisplayIndex = 5
     End Sub
     Private Sub TBDni_TextChanged(sender As Object, e As EventArgs) Handles TBDni.TextChanged
         consultaDinamica(TBDni.Text, DataGridView1)
