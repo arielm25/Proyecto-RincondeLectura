@@ -30,6 +30,7 @@ Public Class ABMCliente
                             cmd.Parameters.AddWithValue("@telefono", TxtTelefono.Text)
                             cmd.Parameters.AddWithValue("@direccion", TxtDireccion.Text)
                             cmd.Parameters.AddWithValue("@mail", TxtMail.Text)
+                            cmd.Parameters.AddWithValue("@estado", 1)
                             cmd.ExecuteNonQuery()
                             MsgBox("Cliente registrado", MsgBoxStyle.OkOnly)
                             cerrar()
@@ -60,6 +61,7 @@ Public Class ABMCliente
 
         End Try
         DataGridView1.Columns("Eliminar").DisplayIndex = 5
+        DataGridView1.Columns(6).Visible = False
     End Sub
     Sub consultaDinamica(ByVal dni As String, ByVal dgv As DataGridView)
         Dim dt As New DataTable
@@ -74,6 +76,7 @@ Public Class ABMCliente
 
         End Try
         DataGridView1.Columns("Eliminar").DisplayIndex = 5
+        DataGridView1.Columns(6).Visible = False
     End Sub
     Private Sub TBDni_TextChanged(sender As Object, e As EventArgs) Handles TBDni.TextChanged
         consultaDinamica(TBDni.Text, DataGridView1)
