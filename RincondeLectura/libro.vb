@@ -11,21 +11,21 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class libro
-    Public Property isbn As Integer
+    Public Property isbn As Long
     Public Property titulo As String
     Public Property idautor As Integer
     Public Property idgenero As Integer
     Public Property ideditorial As Integer
     Public Property sinopsis As String
-    Public Property precio As Double
+    Public Property precio As Decimal
     Public Property stockmin As Integer
+    Public Property stock As Integer
     Public Property anoedicion As Integer
-    Public Property estado As String
     Public Property portada As Byte()
 
     Public Overridable Property autor As autor
-    Public Overridable Property ventadetalle As ICollection(Of ventadetalle) = New HashSet(Of ventadetalle)
     Public Overridable Property editorial As editorial
     Public Overridable Property genero As genero
+    Public Overridable Property ventadetalle As ICollection(Of ventadetalle) = New HashSet(Of ventadetalle)
 
 End Class

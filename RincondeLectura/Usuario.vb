@@ -10,7 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Usuario
+Partial Public Class usuario
     Public Property dni As Integer
     Public Property nombre As String
     Public Property apellido As String
@@ -18,8 +18,7 @@ Partial Public Class Usuario
     Public Property pass As String
     Public Property foto As Byte()
     Public Property tipousuario As String
-    Public Property estado As String
 
-    Public Overridable Property ventaCabecera As ICollection(Of ventaCabecera) = New HashSet(Of ventaCabecera)
+    Public Overridable Property ventacabecera As ICollection(Of ventacabecera) = New HashSet(Of ventacabecera)
 
 End Class

@@ -11,13 +11,13 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class ventadetalle
-    Public Property Idventa As Integer
-    Public Property isbn As Nullable(Of Integer)
-    Public Property cant As Nullable(Of Integer)
-    Public Property precio As Nullable(Of Double)
-    Public Property importe As Nullable(Of Double)
+    Public Property idventa As Integer
+    Public Property isbn As Long
+    Public Property cant As Integer
+    Public Property precio As Decimal
+    Public Property importe As Decimal
 
     Public Overridable Property libro As libro
-    Public Overridable Property ventaCabecera As ventaCabecera
+    Public Overridable Property ventacabecera As ventacabecera
 
 End Class

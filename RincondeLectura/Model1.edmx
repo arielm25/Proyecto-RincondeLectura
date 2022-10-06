@@ -4,16 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="dbRincondeLecturaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="autor">
           <Key>
             <PropertyRef Name="idautor" />
           </Key>
-          <Property Name="idautor" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="nchar" MaxLength="50" />
-          <Property Name="apellido" Type="nchar" MaxLength="30" />
-          <Property Name="biografia" Type="nchar" MaxLength="100" />
-          <Property Name="estado" Type="nchar" MaxLength="10" />
+          <Property Name="idautor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="biografia" Type="varchar" MaxLength="350" />
           <Property Name="foto" Type="image" />
         </EntityType>
         <EntityType Name="cliente">
@@ -21,295 +20,477 @@
             <PropertyRef Name="dnicli" />
           </Key>
           <Property Name="dnicli" Type="int" Nullable="false" />
-          <Property Name="nomyape" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefono" Type="int" Nullable="false" />
-          <Property Name="direccion" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="mail" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="estado" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="nomyape" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="telefono" Type="bigint" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="editorial">
           <Key>
             <PropertyRef Name="ideditorial" />
           </Key>
-          <Property Name="ideditorial" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="direccion" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefono" Type="int" Nullable="false" />
-          <Property Name="mail" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="descripcion" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="estado" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="logo" Type="image" Nullable="false" />
+          <Property Name="ideditorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefono" Type="bigint" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="logo" Type="image" />
         </EntityType>
         <EntityType Name="genero">
           <Key>
             <PropertyRef Name="idgenero" />
           </Key>
-          <Property Name="idgenero" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="nchar" MaxLength="100" Nullable="false" />
-          <Property Name="estado" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="idgenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="libro">
           <Key>
             <PropertyRef Name="isbn" />
           </Key>
-          <Property Name="isbn" Type="int" Nullable="false" />
-          <Property Name="titulo" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="isbn" Type="bigint" Nullable="false" />
+          <Property Name="titulo" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="idautor" Type="int" Nullable="false" />
           <Property Name="idgenero" Type="int" Nullable="false" />
           <Property Name="ideditorial" Type="int" Nullable="false" />
-          <Property Name="sinopsis" Type="nchar" MaxLength="100" Nullable="false" />
-          <Property Name="precio" Type="float" Nullable="false" />
+          <Property Name="sinopsis" Type="varchar" MaxLength="2000" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="stockmin" Type="int" Nullable="false" />
+          <Property Name="stock" Type="int" Nullable="false" />
           <Property Name="anoedicion" Type="int" Nullable="false" />
-          <Property Name="estado" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="portada" Type="image" Nullable="false" />
+          <Property Name="portada" Type="image" />
         </EntityType>
-        <EntityType Name="Usuario">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="usuario">
           <Key>
             <PropertyRef Name="dni" />
           </Key>
           <Property Name="dni" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="apellido" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="username" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="pass" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="foto" Type="image" Nullable="false" />
-          <Property Name="tipousuario" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="estado" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="foto" Type="image" />
+          <Property Name="tipousuario" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="ventaCabecera">
+        <EntityType Name="ventacabecera">
           <Key>
-            <PropertyRef Name="Idventa" />
+            <PropertyRef Name="idventa" />
           </Key>
-          <Property Name="Idventa" Type="int" Nullable="false" />
+          <Property Name="idventa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dnicli" Type="int" Nullable="false" />
-          <Property Name="dni" Type="int" Nullable="false" />
-          <Property Name="tipopago" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="subtotal" Type="float" Nullable="false" />
-          <Property Name="descuento" Type="float" Nullable="false" />
-          <Property Name="total" Type="float" Nullable="false" />
-          <Property Name="fechaventa" Type="date" Nullable="false" />
+          <Property Name="tipopago" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="subtotal" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="descuento" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="dni" Type="int" />
         </EntityType>
         <EntityType Name="ventadetalle">
           <Key>
-            <PropertyRef Name="Idventa" />
+            <PropertyRef Name="idventa" />
+            <PropertyRef Name="isbn" />
           </Key>
-          <Property Name="Idventa" Type="int" Nullable="false" />
-          <Property Name="isbn" Type="int" />
-          <Property Name="cant" Type="int" />
-          <Property Name="precio" Type="float" />
-          <Property Name="importe" Type="float" />
+          <Property Name="idventa" Type="int" Nullable="false" />
+          <Property Name="isbn" Type="bigint" Nullable="false" />
+          <Property Name="cant" Type="int" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="importe" Type="decimal" Precision="8" Scale="2" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Database1ModelStoreContainer">
+        <Association Name="fk_dnicli">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
+          <End Role="ventacabecera" Type="Self.ventacabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="dnicli" />
+            </Principal>
+            <Dependent Role="ventacabecera">
+              <PropertyRef Name="dnicli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_dniusuario">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="ventacabecera" Type="Self.ventacabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="ventacabecera">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idautor">
+          <End Role="autor" Type="Self.autor" Multiplicity="1" />
+          <End Role="libro" Type="Self.libro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="autor">
+              <PropertyRef Name="idautor" />
+            </Principal>
+            <Dependent Role="libro">
+              <PropertyRef Name="idautor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ideditorial">
+          <End Role="editorial" Type="Self.editorial" Multiplicity="1" />
+          <End Role="libro" Type="Self.libro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="editorial">
+              <PropertyRef Name="ideditorial" />
+            </Principal>
+            <Dependent Role="libro">
+              <PropertyRef Name="ideditorial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idgenero">
+          <End Role="genero" Type="Self.genero" Multiplicity="1" />
+          <End Role="libro" Type="Self.libro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genero">
+              <PropertyRef Name="idgenero" />
+            </Principal>
+            <Dependent Role="libro">
+              <PropertyRef Name="idgenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idventa">
+          <End Role="ventacabecera" Type="Self.ventacabecera" Multiplicity="1" />
+          <End Role="ventadetalle" Type="Self.ventadetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ventacabecera">
+              <PropertyRef Name="idventa" />
+            </Principal>
+            <Dependent Role="ventadetalle">
+              <PropertyRef Name="idventa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_isbn">
+          <End Role="libro" Type="Self.libro" Multiplicity="1" />
+          <End Role="ventadetalle" Type="Self.ventadetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="libro">
+              <PropertyRef Name="isbn" />
+            </Principal>
+            <Dependent Role="ventadetalle">
+              <PropertyRef Name="isbn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbRincondeLecturaModelStoreContainer">
           <EntitySet Name="autor" EntityType="Self.autor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="editorial" EntityType="Self.editorial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="genero" EntityType="Self.genero" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="libro" EntityType="Self.libro" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ventaCabecera" EntityType="Self.ventaCabecera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ventacabecera" EntityType="Self.ventacabecera" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ventadetalle" EntityType="Self.ventadetalle" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_dnicli" Association="Self.fk_dnicli">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="ventacabecera" EntitySet="ventacabecera" />
+          </AssociationSet>
+          <AssociationSet Name="fk_dniusuario" Association="Self.fk_dniusuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="ventacabecera" EntitySet="ventacabecera" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idautor" Association="Self.fk_idautor">
+            <End Role="autor" EntitySet="autor" />
+            <End Role="libro" EntitySet="libro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ideditorial" Association="Self.fk_ideditorial">
+            <End Role="editorial" EntitySet="editorial" />
+            <End Role="libro" EntitySet="libro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idgenero" Association="Self.fk_idgenero">
+            <End Role="genero" EntitySet="genero" />
+            <End Role="libro" EntitySet="libro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idventa" Association="Self.fk_idventa">
+            <End Role="ventacabecera" EntitySet="ventacabecera" />
+            <End Role="ventadetalle" EntitySet="ventadetalle" />
+          </AssociationSet>
+          <AssociationSet Name="fk_isbn" Association="Self.fk_isbn">
+            <End Role="libro" EntitySet="libro" />
+            <End Role="ventadetalle" EntitySet="ventadetalle" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="dbRincondeLecturaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="autor">
           <Key>
             <PropertyRef Name="idautor" />
           </Key>
-          <Property Name="idautor" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="apellido" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="biografia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="idautor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="biografia" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
           <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="libro" Relationship="Database1Model.autorlibro" FromRole="autor" ToRole="libro" />
+          <NavigationProperty Name="libro" Relationship="Self.fk_idautor" FromRole="autor" ToRole="libro" />
         </EntityType>
         <EntityType Name="cliente">
           <Key>
             <PropertyRef Name="dnicli" />
           </Key>
           <Property Name="dnicli" Type="Int32" Nullable="false" />
-          <Property Name="nomyape" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="telefono" Type="Int32" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ventaCabecera" Relationship="Database1Model.clienteventaCabecera" FromRole="cliente" ToRole="ventaCabecera" />
+          <Property Name="nomyape" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="Int64" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ventacabecera" Relationship="Self.fk_dnicli" FromRole="cliente" ToRole="ventacabecera" />
         </EntityType>
         <EntityType Name="editorial">
           <Key>
             <PropertyRef Name="ideditorial" />
           </Key>
-          <Property Name="ideditorial" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="telefono" Type="Int32" Nullable="false" />
-          <Property Name="mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="libro" Relationship="Database1Model.editoriallibro" FromRole="editorial" ToRole="libro" />
+          <Property Name="ideditorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="Int64" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="libro" Relationship="Self.fk_ideditorial" FromRole="editorial" ToRole="libro" />
         </EntityType>
         <EntityType Name="genero">
           <Key>
             <PropertyRef Name="idgenero" />
           </Key>
-          <Property Name="idgenero" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="libro" Relationship="Database1Model.generolibro" FromRole="genero" ToRole="libro" />
+          <Property Name="idgenero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="libro" Relationship="Self.fk_idgenero" FromRole="genero" ToRole="libro" />
         </EntityType>
         <EntityType Name="libro">
           <Key>
             <PropertyRef Name="isbn" />
           </Key>
-          <Property Name="isbn" Type="Int32" Nullable="false" />
-          <Property Name="titulo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="isbn" Type="Int64" Nullable="false" />
+          <Property Name="titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idautor" Type="Int32" Nullable="false" />
           <Property Name="idgenero" Type="Int32" Nullable="false" />
           <Property Name="ideditorial" Type="Int32" Nullable="false" />
-          <Property Name="sinopsis" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="precio" Type="Double" Nullable="false" />
+          <Property Name="sinopsis" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="stockmin" Type="Int32" Nullable="false" />
+          <Property Name="stock" Type="Int32" Nullable="false" />
           <Property Name="anoedicion" Type="Int32" Nullable="false" />
-          <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="portada" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="autor" Relationship="Database1Model.autorlibro" FromRole="libro" ToRole="autor" />
-          <NavigationProperty Name="ventadetalle" Relationship="Database1Model.libroventadetalle" FromRole="libro" ToRole="ventadetalle" />
-          <NavigationProperty Name="editorial" Relationship="Database1Model.editoriallibro" FromRole="libro" ToRole="editorial" />
-          <NavigationProperty Name="genero" Relationship="Database1Model.generolibro" FromRole="libro" ToRole="genero" />
+          <Property Name="portada" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="autor" Relationship="Self.fk_idautor" FromRole="libro" ToRole="autor" />
+          <NavigationProperty Name="editorial" Relationship="Self.fk_ideditorial" FromRole="libro" ToRole="editorial" />
+          <NavigationProperty Name="genero" Relationship="Self.fk_idgenero" FromRole="libro" ToRole="genero" />
+          <NavigationProperty Name="ventadetalle" Relationship="Self.fk_isbn" FromRole="libro" ToRole="ventadetalle" />
         </EntityType>
-        <EntityType Name="Usuario">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="usuario">
           <Key>
             <PropertyRef Name="dni" />
           </Key>
           <Property Name="dni" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="pass" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="tipousuario" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ventaCabecera" Relationship="Database1Model.UsuarioventaCabecera" FromRole="Usuario" ToRole="ventaCabecera" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="tipousuario" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ventacabecera" Relationship="Self.fk_dniusuario" FromRole="usuario" ToRole="ventacabecera" />
         </EntityType>
-        <EntityType Name="ventaCabecera">
+        <EntityType Name="ventacabecera">
           <Key>
-            <PropertyRef Name="Idventa" />
+            <PropertyRef Name="idventa" />
           </Key>
-          <Property Name="Idventa" Type="Int32" Nullable="false" />
+          <Property Name="idventa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dnicli" Type="Int32" Nullable="false" />
-          <Property Name="dni" Type="Int32" Nullable="false" />
-          <Property Name="tipopago" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="subtotal" Type="Double" Nullable="false" />
-          <Property Name="descuento" Type="Double" Nullable="false" />
-          <Property Name="total" Type="Double" Nullable="false" />
-          <Property Name="fechaventa" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="cliente" Relationship="Database1Model.clienteventaCabecera" FromRole="ventaCabecera" ToRole="cliente" />
-          <NavigationProperty Name="ventadetalle" Relationship="Database1Model.ventaCabeceraventadetalle" FromRole="ventaCabecera" ToRole="ventadetalle" />
-          <NavigationProperty Name="Usuario" Relationship="Database1Model.UsuarioventaCabecera" FromRole="ventaCabecera" ToRole="Usuario" />
+          <Property Name="tipopago" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="subtotal" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="descuento" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="total" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="dni" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.fk_dnicli" FromRole="ventacabecera" ToRole="cliente" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_dniusuario" FromRole="ventacabecera" ToRole="usuario" />
+          <NavigationProperty Name="ventadetalle" Relationship="Self.fk_idventa" FromRole="ventacabecera" ToRole="ventadetalle" />
         </EntityType>
         <EntityType Name="ventadetalle">
           <Key>
-            <PropertyRef Name="Idventa" />
+            <PropertyRef Name="idventa" />
+            <PropertyRef Name="isbn" />
           </Key>
-          <Property Name="Idventa" Type="Int32" Nullable="false" />
-          <Property Name="isbn" Type="Int32" />
-          <Property Name="cant" Type="Int32" />
-          <Property Name="precio" Type="Double" />
-          <Property Name="importe" Type="Double" />
-          <NavigationProperty Name="libro" Relationship="Database1Model.libroventadetalle" FromRole="ventadetalle" ToRole="libro" />
-          <NavigationProperty Name="ventaCabecera" Relationship="Database1Model.ventaCabeceraventadetalle" FromRole="ventadetalle" ToRole="ventaCabecera" />
+          <Property Name="idventa" Type="Int32" Nullable="false" />
+          <Property Name="isbn" Type="Int64" Nullable="false" />
+          <Property Name="cant" Type="Int32" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="importe" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <NavigationProperty Name="libro" Relationship="Self.fk_isbn" FromRole="ventadetalle" ToRole="libro" />
+          <NavigationProperty Name="ventacabecera" Relationship="Self.fk_idventa" FromRole="ventadetalle" ToRole="ventacabecera" />
         </EntityType>
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+        <Association Name="fk_idautor">
+          <End Role="autor" Type="Self.autor" Multiplicity="1" />
+          <End Role="libro" Type="Self.libro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="autor">
+              <PropertyRef Name="idautor" />
+            </Principal>
+            <Dependent Role="libro">
+              <PropertyRef Name="idautor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_dnicli">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
+          <End Role="ventacabecera" Type="Self.ventacabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="dnicli" />
+            </Principal>
+            <Dependent Role="ventacabecera">
+              <PropertyRef Name="dnicli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ideditorial">
+          <End Role="editorial" Type="Self.editorial" Multiplicity="1" />
+          <End Role="libro" Type="Self.libro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="editorial">
+              <PropertyRef Name="ideditorial" />
+            </Principal>
+            <Dependent Role="libro">
+              <PropertyRef Name="ideditorial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idgenero">
+          <End Role="genero" Type="Self.genero" Multiplicity="1" />
+          <End Role="libro" Type="Self.libro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genero">
+              <PropertyRef Name="idgenero" />
+            </Principal>
+            <Dependent Role="libro">
+              <PropertyRef Name="idgenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_isbn">
+          <End Role="libro" Type="Self.libro" Multiplicity="1" />
+          <End Role="ventadetalle" Type="Self.ventadetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="libro">
+              <PropertyRef Name="isbn" />
+            </Principal>
+            <Dependent Role="ventadetalle">
+              <PropertyRef Name="isbn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_dniusuario">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="ventacabecera" Type="Self.ventacabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="ventacabecera">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idventa">
+          <End Role="ventacabecera" Type="Self.ventacabecera" Multiplicity="1" />
+          <End Role="ventadetalle" Type="Self.ventadetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ventacabecera">
+              <PropertyRef Name="idventa" />
+            </Principal>
+            <Dependent Role="ventadetalle">
+              <PropertyRef Name="idventa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RincondeLecturaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="autor" EntityType="Self.autor" />
           <EntitySet Name="cliente" EntityType="Self.cliente" />
           <EntitySet Name="editorial" EntityType="Self.editorial" />
           <EntitySet Name="genero" EntityType="Self.genero" />
           <EntitySet Name="libro" EntityType="Self.libro" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <EntitySet Name="ventaCabecera" EntityType="Self.ventaCabecera" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <EntitySet Name="ventacabecera" EntityType="Self.ventacabecera" />
           <EntitySet Name="ventadetalle" EntityType="Self.ventadetalle" />
-          <AssociationSet Name="autorlibro" Association="Database1Model.autorlibro">
+          <AssociationSet Name="fk_idautor" Association="Self.fk_idautor">
             <End Role="autor" EntitySet="autor" />
             <End Role="libro" EntitySet="libro" />
           </AssociationSet>
-          <AssociationSet Name="libroventadetalle" Association="Database1Model.libroventadetalle">
-            <End Role="libro" EntitySet="libro" />
-            <End Role="ventadetalle" EntitySet="ventadetalle" />
+          <AssociationSet Name="fk_dnicli" Association="Self.fk_dnicli">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="ventacabecera" EntitySet="ventacabecera" />
           </AssociationSet>
-          <AssociationSet Name="editoriallibro" Association="Database1Model.editoriallibro">
+          <AssociationSet Name="fk_ideditorial" Association="Self.fk_ideditorial">
             <End Role="editorial" EntitySet="editorial" />
             <End Role="libro" EntitySet="libro" />
           </AssociationSet>
-          <AssociationSet Name="generolibro" Association="Database1Model.generolibro">
+          <AssociationSet Name="fk_idgenero" Association="Self.fk_idgenero">
             <End Role="genero" EntitySet="genero" />
             <End Role="libro" EntitySet="libro" />
           </AssociationSet>
-          <AssociationSet Name="clienteventaCabecera" Association="Database1Model.clienteventaCabecera">
-            <End Role="cliente" EntitySet="cliente" />
-            <End Role="ventaCabecera" EntitySet="ventaCabecera" />
-          </AssociationSet>
-          <AssociationSet Name="ventaCabeceraventadetalle" Association="Database1Model.ventaCabeceraventadetalle">
-            <End Role="ventaCabecera" EntitySet="ventaCabecera" />
+          <AssociationSet Name="fk_isbn" Association="Self.fk_isbn">
+            <End Role="libro" EntitySet="libro" />
             <End Role="ventadetalle" EntitySet="ventadetalle" />
           </AssociationSet>
-          <AssociationSet Name="UsuarioventaCabecera" Association="Database1Model.UsuarioventaCabecera">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="ventaCabecera" EntitySet="ventaCabecera" />
+          <AssociationSet Name="fk_dniusuario" Association="Self.fk_dniusuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="ventacabecera" EntitySet="ventacabecera" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idventa" Association="Self.fk_idventa">
+            <End Role="ventacabecera" EntitySet="ventacabecera" />
+            <End Role="ventadetalle" EntitySet="ventadetalle" />
           </AssociationSet>
         </EntityContainer>
-        <Association Name="autorlibro">
-          <End Type="Database1Model.autor" Role="autor" Multiplicity="1" />
-          <End Type="Database1Model.libro" Role="libro" Multiplicity="*" />
-        </Association>
-        <Association Name="libroventadetalle">
-          <End Type="Database1Model.libro" Role="libro" Multiplicity="1" />
-          <End Type="Database1Model.ventadetalle" Role="ventadetalle" Multiplicity="*" />
-        </Association>
-        <Association Name="editoriallibro">
-          <End Type="Database1Model.editorial" Role="editorial" Multiplicity="1" />
-          <End Type="Database1Model.libro" Role="libro" Multiplicity="*" />
-        </Association>
-        <Association Name="generolibro">
-          <End Type="Database1Model.genero" Role="genero" Multiplicity="1" />
-          <End Type="Database1Model.libro" Role="libro" Multiplicity="*" />
-        </Association>
-        <Association Name="clienteventaCabecera">
-          <End Type="Database1Model.cliente" Role="cliente" Multiplicity="1" />
-          <End Type="Database1Model.ventaCabecera" Role="ventaCabecera" Multiplicity="*" />
-        </Association>
-        <Association Name="ventaCabeceraventadetalle">
-          <End Type="Database1Model.ventaCabecera" Role="ventaCabecera" Multiplicity="1" />
-          <End Type="Database1Model.ventadetalle" Role="ventadetalle" Multiplicity="*" />
-        </Association>
-        <Association Name="UsuarioventaCabecera">
-          <End Type="Database1Model.Usuario" Role="Usuario" Multiplicity="0..1" />
-          <End Type="Database1Model.ventaCabecera" Role="ventaCabecera" Multiplicity="*" />
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+        <EntityContainerMapping StorageEntityContainer="dbRincondeLecturaModelStoreContainer" CdmEntityContainer="RincondeLecturaEntities">
           <EntitySetMapping Name="autor">
-            <EntityTypeMapping TypeName="Database1Model.autor">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.autor">
               <MappingFragment StoreEntitySet="autor">
                 <ScalarProperty Name="idautor" ColumnName="idautor" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
                 <ScalarProperty Name="biografia" ColumnName="biografia" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="foto" ColumnName="foto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cliente">
-            <EntityTypeMapping TypeName="Database1Model.cliente">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.cliente">
               <MappingFragment StoreEntitySet="cliente">
                 <ScalarProperty Name="dnicli" ColumnName="dnicli" />
                 <ScalarProperty Name="nomyape" ColumnName="nomyape" />
@@ -321,7 +502,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="editorial">
-            <EntityTypeMapping TypeName="Database1Model.editorial">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.editorial">
               <MappingFragment StoreEntitySet="editorial">
                 <ScalarProperty Name="ideditorial" ColumnName="ideditorial" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -329,22 +510,20 @@
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="mail" ColumnName="mail" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="logo" ColumnName="logo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="genero">
-            <EntityTypeMapping TypeName="Database1Model.genero">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.genero">
               <MappingFragment StoreEntitySet="genero">
                 <ScalarProperty Name="idgenero" ColumnName="idgenero" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="libro">
-            <EntityTypeMapping TypeName="Database1Model.libro">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.libro">
               <MappingFragment StoreEntitySet="libro">
                 <ScalarProperty Name="isbn" ColumnName="isbn" />
                 <ScalarProperty Name="titulo" ColumnName="titulo" />
@@ -354,15 +533,26 @@
                 <ScalarProperty Name="sinopsis" ColumnName="sinopsis" />
                 <ScalarProperty Name="precio" ColumnName="precio" />
                 <ScalarProperty Name="stockmin" ColumnName="stockmin" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
                 <ScalarProperty Name="anoedicion" ColumnName="anoedicion" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="portada" ColumnName="portada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuario">
-            <EntityTypeMapping TypeName="Database1Model.Usuario">
-              <MappingFragment StoreEntitySet="Usuario">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
                 <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
@@ -370,28 +560,26 @@
                 <ScalarProperty Name="pass" ColumnName="pass" />
                 <ScalarProperty Name="foto" ColumnName="foto" />
                 <ScalarProperty Name="tipousuario" ColumnName="tipousuario" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ventaCabecera">
-            <EntityTypeMapping TypeName="Database1Model.ventaCabecera">
-              <MappingFragment StoreEntitySet="ventaCabecera">
-                <ScalarProperty Name="Idventa" ColumnName="Idventa" />
+          <EntitySetMapping Name="ventacabecera">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.ventacabecera">
+              <MappingFragment StoreEntitySet="ventacabecera">
+                <ScalarProperty Name="idventa" ColumnName="idventa" />
                 <ScalarProperty Name="dnicli" ColumnName="dnicli" />
-                <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="tipopago" ColumnName="tipopago" />
                 <ScalarProperty Name="subtotal" ColumnName="subtotal" />
                 <ScalarProperty Name="descuento" ColumnName="descuento" />
                 <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="fechaventa" ColumnName="fechaventa" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ventadetalle">
-            <EntityTypeMapping TypeName="Database1Model.ventadetalle">
+            <EntityTypeMapping TypeName="dbRincondeLecturaModel.ventadetalle">
               <MappingFragment StoreEntitySet="ventadetalle">
-                <ScalarProperty Name="Idventa" ColumnName="Idventa" />
+                <ScalarProperty Name="idventa" ColumnName="idventa" />
                 <ScalarProperty Name="isbn" ColumnName="isbn" />
                 <ScalarProperty Name="cant" ColumnName="cant" />
                 <ScalarProperty Name="precio" ColumnName="precio" />

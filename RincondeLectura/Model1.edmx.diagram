@@ -4,22 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1ea333b2e5164d7d927e1ae4569427db" Name="Diagram1" ZoomLevel="127">
-        <EntityTypeShape EntityType="Database1Model.autor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.cliente" Width="1.5" PointX="9.375" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.editorial" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.genero" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.libro" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Usuario" Width="1.5" PointX="9.375" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.ventaCabecera" Width="1.5" PointX="6.125" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.ventadetalle" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="Database1Model.autorlibro" />
-        <AssociationConnector Association="Database1Model.libroventadetalle" />
-        <AssociationConnector Association="Database1Model.editoriallibro" />
-        <AssociationConnector Association="Database1Model.generolibro" />
-        <AssociationConnector Association="Database1Model.clienteventaCabecera" />
-        <AssociationConnector Association="Database1Model.ventaCabeceraventadetalle" />
-        <AssociationConnector Association="Database1Model.UsuarioventaCabecera" />
+      <Diagram DiagramId="1d27789f877246ac8c174e264c7218f1" Name="Diagram1">
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.autor" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.cliente" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.editorial" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.genero" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.libro" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.usuario" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.ventacabecera" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRincondeLecturaModel.ventadetalle" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="dbRincondeLecturaModel.fk_idautor" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRincondeLecturaModel.fk_dnicli" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRincondeLecturaModel.fk_ideditorial" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRincondeLecturaModel.fk_idgenero" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRincondeLecturaModel.fk_isbn" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRincondeLecturaModel.fk_dniusuario" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRincondeLecturaModel.fk_idventa" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

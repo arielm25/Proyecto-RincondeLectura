@@ -15,7 +15,6 @@ Partial Public Class autor
     Public Property nombre As String
     Public Property apellido As String
     Public Property biografia As String
-    Public Property estado As String
     Public Property foto As Byte()
 
     Public Overridable Property libro As ICollection(Of libro) = New HashSet(Of libro)

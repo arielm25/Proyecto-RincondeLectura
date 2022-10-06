@@ -50,16 +50,29 @@ Public Class ABMCliente
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
         Dim dt As New DataTable
         Dim da As SqlDataAdapter
-        Try
-            abrir()
-            da = New SqlDataAdapter("lista_clientes", conexion)
-            da.Fill(dt)
-            DataGridView1.DataSource = dt
-            cerrar()
-        Catch ex As Exception : MsgBox(ex.Message)
+        If (RBActivos.Checked = True) Then
+            Try
+                abrir()
+                da = New SqlDataAdapter("lista_clientes", conexion)
+                da.Fill(dt)
+                DataGridView1.DataSource = dt
+                cerrar()
+            Catch ex As Exception : MsgBox(ex.Message)
 
-        End Try
-        DataGridView1.Columns("Eliminar").DisplayIndex = 5
+            End Try
+        Else
+            If (RBEliminados.Checked = True) Then
+                Try
+                    abrir()
+                    da = New SqlDataAdapter("lista_clientes_eliminados", conexion)
+                    da.Fill(dt)
+                    DataGridView1.DataSource = dt
+                    cerrar()
+                Catch ex As Exception : MsgBox(ex.Message)
+
+                End Try
+            End If
+        End If
     End Sub
     Sub consultaDinamica(ByVal dni As String, ByVal dgv As DataGridView)
         Dim dt As New DataTable
@@ -73,7 +86,6 @@ Public Class ABMCliente
         Catch ex As Exception
 
         End Try
-        DataGridView1.Columns("Eliminar").DisplayIndex = 5
     End Sub
     Private Sub TBDni_TextChanged(sender As Object, e As EventArgs) Handles TBDni.TextChanged
         consultaDinamica(TBDni.Text, DataGridView1)
@@ -102,8 +114,6 @@ Public Class ABMCliente
             TxtTelefono.Text = ""
             TxtDireccion.Text = ""
             TxtMail.Text = ""
-
-
         Catch ex As Exception
             MsgBox("404 Error al modificar ")
         End Try
@@ -159,5 +169,36 @@ Public Class ABMCliente
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
+
+        Try
+            Dim cmd As New SqlCommand
+            abrir()
+            cmd = New SqlCommand("eliminar_acliente", conexion)
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@dnicli", DataGridView1.SelectedCells.Item(0).Value)
+            cmd.ExecuteNonQuery()
+            DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            MsgBox("Se dio de baja el cliente")
+            cerrar()
+        Catch ex As Exception : MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BActivar_Click(sender As Object, e As EventArgs) Handles BActivar.Click
+        Try
+            Dim cmd As New SqlCommand
+            abrir()
+            cmd = New SqlCommand("alta_cliente", conexion)
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@dnicli", DataGridView1.SelectedCells.Item(0).Value)
+            cmd.ExecuteNonQuery()
+            DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            MsgBox("Se dio de alta el cliente")
+            cerrar()
+        Catch ex As Exception : MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

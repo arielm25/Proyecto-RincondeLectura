@@ -11,11 +11,11 @@ Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
 
-Partial Public Class Database1Entities
+Partial Public Class RincondeLecturaEntities
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=Database1Entities")
+        MyBase.New("name=RincondeLecturaEntities")
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
@@ -27,8 +27,9 @@ Partial Public Class Database1Entities
     Public Overridable Property editorial() As DbSet(Of editorial)
     Public Overridable Property genero() As DbSet(Of genero)
     Public Overridable Property libro() As DbSet(Of libro)
-    Public Overridable Property Usuario() As DbSet(Of Usuario)
-    Public Overridable Property ventaCabecera() As DbSet(Of ventaCabecera)
+    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
+    Public Overridable Property usuario() As DbSet(Of usuario)
+    Public Overridable Property ventacabecera() As DbSet(Of ventacabecera)
     Public Overridable Property ventadetalle() As DbSet(Of ventadetalle)
 
 End Class

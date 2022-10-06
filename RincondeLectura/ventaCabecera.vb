@@ -10,18 +10,17 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class ventaCabecera
-    Public Property Idventa As Integer
+Partial Public Class ventacabecera
+    Public Property idventa As Integer
     Public Property dnicli As Integer
-    Public Property dni As Integer
     Public Property tipopago As String
-    Public Property subtotal As Double
-    Public Property descuento As Double
-    Public Property total As Double
-    Public Property fechaventa As Date
+    Public Property subtotal As Decimal
+    Public Property descuento As Decimal
+    Public Property total As Decimal
+    Public Property dni As Nullable(Of Integer)
 
     Public Overridable Property cliente As cliente
+    Public Overridable Property usuario As usuario
     Public Overridable Property ventadetalle As ICollection(Of ventadetalle) = New HashSet(Of ventadetalle)
-    Public Overridable Property Usuario As Usuario
 
 End Class

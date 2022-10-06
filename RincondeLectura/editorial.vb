@@ -14,10 +14,9 @@ Partial Public Class editorial
     Public Property ideditorial As Integer
     Public Property nombre As String
     Public Property direccion As String
-    Public Property telefono As Integer
+    Public Property telefono As Long
     Public Property mail As String
     Public Property descripcion As String
-    Public Property estado As String
     Public Property logo As Byte()
 
     Public Overridable Property libro As ICollection(Of libro) = New HashSet(Of libro)

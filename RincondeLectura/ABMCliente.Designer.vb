@@ -27,6 +27,7 @@ Partial Class ABMCliente
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GBFiltrar = New System.Windows.Forms.GroupBox()
+        Me.BEliminar = New System.Windows.Forms.Button()
         Me.RBEliminados = New System.Windows.Forms.RadioButton()
         Me.RBActivos = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -46,7 +47,7 @@ Partial Class ABMCliente
         Me.GBNyA = New System.Windows.Forms.GroupBox()
         Me.TxtNyA = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BActivar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBFiltrar.SuspendLayout()
@@ -92,7 +93,6 @@ Partial Class ABMCliente
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
         Me.DataGridView1.Location = New System.Drawing.Point(32, 232)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -110,6 +110,8 @@ Partial Class ABMCliente
         'GBFiltrar
         '
         Me.GBFiltrar.BackColor = System.Drawing.Color.Black
+        Me.GBFiltrar.Controls.Add(Me.BActivar)
+        Me.GBFiltrar.Controls.Add(Me.BEliminar)
         Me.GBFiltrar.Controls.Add(Me.RBEliminados)
         Me.GBFiltrar.Controls.Add(Me.RBActivos)
         Me.GBFiltrar.Controls.Add(Me.GroupBox1)
@@ -123,10 +125,21 @@ Partial Class ABMCliente
         Me.GBFiltrar.TabStop = False
         Me.GBFiltrar.Text = "Filtrar Por"
         '
+        'BEliminar
+        '
+        Me.BEliminar.BackColor = System.Drawing.Color.Black
+        Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BEliminar.Location = New System.Drawing.Point(501, 16)
+        Me.BEliminar.Name = "BEliminar"
+        Me.BEliminar.Size = New System.Drawing.Size(88, 27)
+        Me.BEliminar.TabIndex = 9
+        Me.BEliminar.Text = "Eliminar"
+        Me.BEliminar.UseVisualStyleBackColor = False
+        '
         'RBEliminados
         '
         Me.RBEliminados.AutoSize = True
-        Me.RBEliminados.Location = New System.Drawing.Point(514, 39)
+        Me.RBEliminados.Location = New System.Drawing.Point(514, 47)
         Me.RBEliminados.Margin = New System.Windows.Forms.Padding(2)
         Me.RBEliminados.Name = "RBEliminados"
         Me.RBEliminados.Size = New System.Drawing.Size(75, 17)
@@ -138,7 +151,7 @@ Partial Class ABMCliente
         'RBActivos
         '
         Me.RBActivos.AutoSize = True
-        Me.RBActivos.Location = New System.Drawing.Point(414, 39)
+        Me.RBActivos.Location = New System.Drawing.Point(414, 46)
         Me.RBActivos.Margin = New System.Windows.Forms.Padding(2)
         Me.RBActivos.Name = "RBActivos"
         Me.RBActivos.Size = New System.Drawing.Size(60, 17)
@@ -336,10 +349,16 @@ Partial Class ABMCliente
         Me.Panel2.Size = New System.Drawing.Size(688, 604)
         Me.Panel2.TabIndex = 1
         '
-        'Eliminar
+        'BActivar
         '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
+        Me.BActivar.BackColor = System.Drawing.Color.Black
+        Me.BActivar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BActivar.Location = New System.Drawing.Point(404, 16)
+        Me.BActivar.Name = "BActivar"
+        Me.BActivar.Size = New System.Drawing.Size(93, 27)
+        Me.BActivar.TabIndex = 10
+        Me.BActivar.Text = "Activar"
+        Me.BActivar.UseVisualStyleBackColor = False
         '
         'ABMCliente
         '
@@ -397,5 +416,6 @@ Partial Class ABMCliente
     Friend WithEvents RBEliminados As RadioButton
     Friend WithEvents RBActivos As RadioButton
     Friend WithEvents BSalir As Button
-    Friend WithEvents Eliminar As DataGridViewTextBoxColumn
+    Friend WithEvents BEliminar As Button
+    Friend WithEvents BActivar As Button
 End Class

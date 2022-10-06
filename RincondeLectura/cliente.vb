@@ -13,11 +13,11 @@ Imports System.Collections.Generic
 Partial Public Class cliente
     Public Property dnicli As Integer
     Public Property nomyape As String
-    Public Property telefono As Integer
+    Public Property telefono As Long
     Public Property direccion As String
     Public Property mail As String
     Public Property estado As String
 
-    Public Overridable Property ventaCabecera As ICollection(Of ventaCabecera) = New HashSet(Of ventaCabecera)
+    Public Overridable Property ventacabecera As ICollection(Of ventacabecera) = New HashSet(Of ventacabecera)
 
 End Class

@@ -1,22 +1,26 @@
 ﻿
 Public Class InicioSesion
-    Private Sub BIngresar_Click() Handles BIngresar.Click
-        If (TBUsuario.Text = "vendedor" And TBContraseña.Text = "vendedor") Then
-            vendedor.Show()
-            Hide()
-        ElseIf (TBUsuario.Text = "gerente" And TBContraseña.Text = "gerente") Then
-            gerente.Show()
-            Hide()
-        ElseIf (TBUsuario.Text = "admin" And TBContraseña.Text = "admin") Then
-            administrador.Show()
-            Hide()
-        Else
-            If (TBUsuario.Text = "") Or (TBContraseña.Text = "") Then
-                MsgBox("Debe completar todos los campos", 0 + 0 + 64, "Alerta")
+    Public Function Verificar(ByVal p_usuario As String, ByVal p_pass As String, ByVal p_tipo As String)
+        Try
+            Dim tipouser As New RincondeLecturaEntities
+            Dim verif = (From q In tipouser.usuario
+                         Where (p_usuario = q.username And p_pass = q.pass And q.tipousuario = p_tipo)
+                         Select q).First()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
-            Else
-                MsgBox("Usuario o contraseña incorrectos", 0 + 0 + 64, "Atencion")
-            End If
+
+    Private Sub BIngresar_Click() Handles BIngresar.Click
+
+        If Verificar(TBUsuario.Text, TBContraseña.Text, "A") Then
+            administrador.ShowDialog()
+        ElseIf Verificar(TBUsuario.Text, TBContraseña.Text, "V") Then
+            vendedor.ShowDialog()
+        ElseIf Verificar(TBUsuario.Text, TBContraseña.Text, "G") Then
+            gerente.ShowDialog()
         End If
         TBUsuario.Text = ""
         TBContraseña.Text = ""
